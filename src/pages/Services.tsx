@@ -1,0 +1,212 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
+import { CheckCircle, Clock, Star, ArrowRight, Phone } from "lucide-react";
+
+const Services = () => {
+  const services = [
+    {
+      title: "General Consultation",
+      price: "Free",
+      duration: "30 minutes",
+      description: "Get expert advice and understand your options with a complimentary consultation session.",
+      features: [
+        "Credit report review",
+        "Personalized strategy",
+        "No obligation assessment",
+        "Expert recommendations"
+      ],
+      badge: "Most Popular",
+      badgeColor: "bg-gold-accent text-navy-primary"
+    },
+    {
+      title: "Auto & Home Purchasing Assistance",
+      price: "Free",
+      duration: "30 minutes",
+      description: "Specialized guidance for auto loans and home purchases to help you secure the best rates.",
+      features: [
+        "Pre-purchase planning",
+        "Rate optimization strategies",
+        "Lender recommendations",
+        "Documentation guidance"
+      ],
+      badge: "Limited Time",
+      badgeColor: "bg-navy-primary text-white"
+    },
+    {
+      title: "Credit Intake / Restoration",
+      price: "$75",
+      duration: "1.5 hours",
+      description: "Comprehensive credit analysis and restoration planning session to map your credit journey.",
+      features: [
+        "Detailed credit analysis",
+        "Restoration timeline",
+        "Action plan development",
+        "Progress tracking setup"
+      ]
+    },
+    {
+      title: "Credit Sweep",
+      price: "$800+",
+      originalPrice: "$999+ with bankruptcy",
+      duration: "30-45 days",
+      description: "Our signature service that removes approximately 80% of negative items from your credit report.",
+      features: [
+        "Remove negative items",
+        "80% success rate",
+        "30-45 day process",
+        "Proven methodology",
+        "Bankruptcy included (+$199)"
+      ],
+      highlight: true
+    },
+    {
+      title: "Business Credit 7-Step Program",
+      price: "$850",
+      duration: "3-6 months",
+      description: "Complete business credit building program that establishes and builds real business credit in 7 steps.",
+      features: [
+        "Business formation",
+        "D-U-N-S number setup",
+        "Business credit reports",
+        "Trade line accounts",
+        "Business credit cards",
+        "Vendor accounts",
+        "Business funding access"
+      ],
+      highlight: true
+    }
+  ];
+
+  return (
+    <div className="min-h-screen pt-20">
+      {/* Header Section */}
+      <section className="py-20 bg-gradient-to-br from-navy-primary to-navy-primary/90">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            Affordable, Transparent Services
+          </h1>
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
+            No hidden fees. Clear pricing. Results you can trust.
+          </p>
+          <div className="flex items-center justify-center space-x-2 text-gold-accent">
+            <Star className="h-5 w-5 fill-current" />
+            <Star className="h-5 w-5 fill-current" />
+            <Star className="h-5 w-5 fill-current" />
+            <Star className="h-5 w-5 fill-current" />
+            <Star className="h-5 w-5 fill-current" />
+            <span className="text-white ml-2">Trusted by 1000+ clients</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-20 bg-gray-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Card 
+                key={service.title}
+                className={`relative hover-lift transition-all duration-300 ${
+                  service.highlight 
+                    ? 'ring-2 ring-gold-accent shadow-xl scale-105' 
+                    : 'shadow-lg'
+                } bg-white border-0`}
+              >
+                {service.badge && (
+                  <Badge className={`absolute -top-3 left-6 ${service.badgeColor} px-3 py-1`}>
+                    {service.badge}
+                  </Badge>
+                )}
+                
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-2xl font-bold text-navy-primary mb-2">
+                    {service.title}
+                  </CardTitle>
+                  
+                  <div className="flex items-baseline space-x-2">
+                    <span className="text-4xl font-bold text-gold-accent">
+                      {service.price}
+                    </span>
+                    {service.originalPrice && (
+                      <span className="text-sm text-gray-medium line-through">
+                        {service.originalPrice}
+                      </span>
+                    )}
+                  </div>
+                  
+                  <div className="flex items-center text-gray-medium text-sm">
+                    <Clock className="h-4 w-4 mr-1" />
+                    {service.duration}
+                  </div>
+                </CardHeader>
+                
+                <CardContent className="space-y-6">
+                  <p className="text-gray-dark leading-relaxed">
+                    {service.description}
+                  </p>
+                  
+                  <ul className="space-y-3">
+                    {service.features.map((feature) => (
+                      <li key={feature} className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-gold-accent mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-dark text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <div className="pt-4 space-y-3">
+                    <Button 
+                      variant={service.highlight ? "hero" : "navy"} 
+                      className="w-full" 
+                      asChild
+                    >
+                      <Link to="/contact">
+                        {service.price === "Free" ? "Book Now" : "Get Started"}
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                    
+                    {service.price !== "Free" && (
+                      <Button variant="outline" className="w-full" asChild>
+                        <Link to="/payment">Make Payment</Link>
+                      </Button>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-20 bg-navy-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Have Questions About Our Services?
+          </h2>
+          <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+            Speak with our credit experts to find the perfect solution for your financial goals.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button variant="hero" size="lg" asChild>
+              <Link to="/contact">
+                <Phone className="mr-2 h-5 w-5" />
+                Call 404-207-2847
+              </Link>
+            </Button>
+            
+            <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20" asChild>
+              <Link to="/faq">View FAQ</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Services;
