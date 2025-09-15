@@ -91,11 +91,6 @@ const Index = () => {
                 </Link>
               </Button>
             </div>
-            
-            <div className="flex items-center justify-center mt-8 space-x-2 text-white/80">
-              <Phone size={18} />
-              <span className="text-lg">404-207-2847</span>
-            </div>
           </div>
         </div>
         

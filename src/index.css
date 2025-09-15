@@ -4,55 +4,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TruCredit Design System - Professional Credit Restoration */
+/* TruCredit Design System - Classic & Trustworthy */
 
 @layer base {
   :root {
     /* Core Brand Colors */
-    --navy-primary: 215 45% 17%;        /* #1E2A38 - Professional Navy */
-    --gold-accent: 46 72% 53%;          /* #D4AF37 - Luxury Gold */
+    --navy-primary: 215 45% 17%;        /* #1E2A38 - Trustworthy Navy */
+    --gold-accent: 46 72% 53%;          /* #D4AF37 - Premium Gold */
     --white-pure: 0 0% 100%;            /* #FFFFFF - Clean White */
-    --gray-light: 220 13% 96%;          /* Light Gray for backgrounds */
-    --gray-medium: 215 16% 65%;         /* Medium Gray for text */
+    --gray-light: 220 13% 96%;          /* Light Gray for alt backgrounds */
+    --gray-medium: 215 16% 65%;         /* Medium Gray for body text */
     --gray-dark: 215 25% 27%;           /* Dark Gray for secondary text */
-    
+
     /* Gradient Definitions */
     --gradient-hero: linear-gradient(135deg, hsl(var(--navy-primary)), hsl(215 50% 25%));
     --gradient-gold: linear-gradient(135deg, hsl(var(--gold-accent)), hsl(46 72% 60%));
     --gradient-card: linear-gradient(145deg, hsl(var(--white-pure)), hsl(var(--gray-light)));
-    
-    /* Shadow System */
+
+    /* Shadows */
     --shadow-card: 0 4px 6px -1px hsl(var(--navy-primary) / 0.1), 0 2px 4px -1px hsl(var(--navy-primary) / 0.06);
     --shadow-card-hover: 0 10px 15px -3px hsl(var(--navy-primary) / 0.1), 0 4px 6px -2px hsl(var(--navy-primary) / 0.05);
     --shadow-hero: 0 25px 50px -12px hsl(var(--navy-primary) / 0.25);
     --shadow-gold: 0 0 30px hsl(var(--gold-accent) / 0.3);
-    
-    /* Animation Timings */
+
+    /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    
-    /* Design System Mapping */
+
+    /* Design Mapping */
     --background: var(--white-pure);
     --foreground: var(--navy-primary);
+
     --card: var(--white-pure);
     --card-foreground: var(--navy-primary);
+
     --popover: var(--white-pure);
     --popover-foreground: var(--navy-primary);
-    --primary: var(--navy-primary);
+
+    --primary: var(--navy-primary);              /* Headers, nav, CTA buttons */
     --primary-foreground: var(--white-pure);
-    --secondary: var(--gray-light);
+
+    --secondary: var(--gray-light);             /* Alternate backgrounds */
     --secondary-foreground: var(--navy-primary);
+
     --muted: var(--gray-light);
     --muted-foreground: var(--gray-medium);
-    --accent: var(--gold-accent);
+
+    --accent: var(--gold-accent);               /* Icons, highlights, key stats */
     --accent-foreground: var(--navy-primary);
+
     --destructive: 0 84% 60%;
     --destructive-foreground: var(--white-pure);
+
     --border: var(--gray-light);
     --input: var(--gray-light);
     --ring: var(--gold-accent);
-    --radius: 0.75rem;
 
+    --radius: 0.75rem;
   }
 }
 
@@ -65,65 +73,65 @@
     @apply bg-background text-foreground font-poppins;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
 }
 
 @layer components {
-  /* Hero Section Styles */
+  /* Hero Section */
   .hero-gradient {
     background: var(--gradient-hero);
   }
-  
+
   .gold-gradient {
     background: var(--gradient-gold);
   }
-  
+
   .card-gradient {
     background: var(--gradient-card);
   }
-  
-  /* Animation Classes */
+
+  /* Animations */
   .animate-fade-up {
     animation: fadeUp 0.6s ease-out forwards;
     opacity: 0;
     transform: translateY(30px);
   }
-  
+
   .animate-scale-in {
     animation: scaleIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
     opacity: 0;
     transform: scale(0.9);
   }
-  
+
   .animate-slide-right {
     animation: slideRight 0.7s ease-out forwards;
     opacity: 0;
     transform: translateX(-30px);
   }
-  
-  /* Interactive Elements */
+
+  /* Interactive */
   .hover-lift {
     transition: var(--transition-smooth);
   }
-  
+
   .hover-lift:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-card-hover);
   }
-  
+
   .hover-gold:hover {
     box-shadow: var(--shadow-gold);
   }
-  
-  /* Timeline Styles */
+
+  /* Timeline */
   .timeline-step {
     position: relative;
     padding-left: 3rem;
   }
-  
+
   .timeline-step::before {
     content: '';
     position: absolute;
@@ -133,11 +141,11 @@
     width: 2px;
     background: linear-gradient(to bottom, hsl(var(--gold-accent)), transparent);
   }
-  
+
   .timeline-step:last-child::before {
     display: none;
   }
-  
+
   .timeline-number {
     position: absolute;
     left: 0;
@@ -156,6 +164,7 @@
   }
 }
 
+/* Keyframes */
 @keyframes fadeUp {
   to {
     opacity: 1;

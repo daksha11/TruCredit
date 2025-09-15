@@ -108,7 +108,7 @@ const Services = () => {
             {services.map((service, index) => (
               <Card 
                 key={service.title}
-                className={`relative hover-lift transition-all duration-300 ${
+                className={`relative flex flex-col hover-lift transition-all duration-300 ${
                   service.highlight 
                     ? 'ring-2 ring-gold-accent shadow-xl scale-105' 
                     : 'shadow-lg'
@@ -142,12 +142,12 @@ const Services = () => {
                   </div>
                 </CardHeader>
                 
-                <CardContent className="space-y-6">
+                <CardContent className="flex flex-col flex-grow space-y-6">
                   <p className="text-gray-dark leading-relaxed">
                     {service.description}
                   </p>
                   
-                  <ul className="space-y-3">
+                  <ul className="space-y-3 flex-grow">
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-gold-accent mr-3 mt-0.5 flex-shrink-0" />
@@ -156,7 +156,7 @@ const Services = () => {
                     ))}
                   </ul>
                   
-                  <div className="pt-4 space-y-3">
+                  <div className="pt-4 mt-auto">
                     <Button 
                       variant={service.highlight ? "hero" : "navy"} 
                       className="w-full" 
@@ -168,11 +168,12 @@ const Services = () => {
                       </Link>
                     </Button>
                     
-                    {service.price !== "Free" && (
-                      <Button variant="outline" className="w-full" asChild>
+                    {/* Payment button commented out as requested */}
+                    {/* {service.price !== "Free" && (
+                      <Button variant="outline" className="w-full mt-3" asChild>
                         <Link to="/payment">Make Payment</Link>
                       </Button>
-                    )}
+                    )} */}
                   </div>
                 </CardContent>
               </Card>

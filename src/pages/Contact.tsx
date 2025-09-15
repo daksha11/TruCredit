@@ -18,16 +18,13 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Simple form validation
     if (!formData.name || !formData.email || !formData.message) {
       toast.error("Please fill in all required fields");
       return;
     }
     
-    // Here you would typically send the form data to your backend
     toast.success("Thank you for your message! We'll get back to you within 24 hours.");
     
-    // Reset form
     setFormData({
       name: "",
       email: "",
@@ -260,7 +257,8 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              {/* Payment Options */}
+              {/* Payment Options (Commented Out) */}
+              {/*
               <Card className="shadow-lg border-0">
                 <CardHeader>
                   <CardTitle className="text-xl font-bold text-navy-primary">
@@ -291,6 +289,7 @@ const Contact = () => {
                   </Button>
                 </CardContent>
               </Card>
+              */}
             </div>
           </div>
         </div>
