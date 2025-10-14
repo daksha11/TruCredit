@@ -48,8 +48,8 @@ const Services = () => {
     },
     {
       title: "Credit Sweep",
-      price: "$800+",
-      originalPrice: "$999+ with bankruptcy",
+      price: "$999",
+      originalPrice: "$1199 with bankruptcy",
       duration: "30-45 days",
       description: "Our signature service that removes approximately 80% of negative items from your credit report.",
       features: [
@@ -57,7 +57,7 @@ const Services = () => {
         "80% success rate",
         "30-45 day process",
         "Proven methodology",
-        "Bankruptcy included (+$199)"
+        "Bankruptcy included (+$200)"
       ],
       highlight: true
     },
