@@ -331,7 +331,7 @@ const Testimonials = () => {
           <div className="mt-8 text-gray-200">
             <p className="text-lg">
               <Phone className="inline h-5 w-5 mr-2" />
-              Call us directly: <span className="text-gold-accent font-semibold">404-207-2847</span>
+              Call us directly: <span className="text-gold-accent font-semibold">470-223-8668</span>
             </p>
           </div>
         </div>

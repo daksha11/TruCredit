@@ -45,9 +45,9 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: "404-207-2847",
+      value: "470-223-8668",
       description: "Call us for immediate assistance",
-      action: "tel:404-207-2847"
+      action: "tel:470-223-8668"
     },
     {
       icon: Instagram,
@@ -242,7 +242,7 @@ const Contact = () => {
                   
                   <div className="space-y-3">
                     <Button variant="hero" size="lg" className="w-full" asChild>
-                      <a href="tel:404-207-2847">
+                      <a href="tel:470-223-8668">
                         <Phone className="mr-2 h-5 w-5" />
                         Call for Free Consultation
                       </a>
@@ -269,7 +269,7 @@ const Contact = () => {
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="font-medium">Zelle:</span>
-                      <span className="text-gold-accent">404-207-2847</span>
+                      <span className="text-gold-accent">470-223-8668</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="font-medium">Cash App:</span>

@@ -30,7 +30,7 @@ const Payment = () => {
       description: "Direct bank-to-bank transfer",
       icon: Zap,
       features: ["Instant Transfer", "No Processing Fees", "Bank-Level Security", "US Banks Only"],
-      contactInfo: "Send to: 404-207-2847",
+      contactInfo: "Send to: 470-223-8668",
       buttonText: "Open Zelle App",
       badge: "Instant",
       badgeColor: "bg-purple-500 text-white"
@@ -50,7 +50,7 @@ const Payment = () => {
       description: "Secure payments with Touch ID",
       icon: Smartphone,
       features: ["Touch/Face ID", "Device Security", "No Card Numbers Shared", "Quick Checkout"],
-      contactInfo: "Available on request - Call 404-207-2847",
+      contactInfo: "Available on request - Call 470-223-8668",
       buttonText: "Request Apple Pay",
       badge: "Secure",
       badgeColor: "bg-gray-700 text-white"
@@ -62,13 +62,13 @@ const Payment = () => {
       window.open(method.action, '_blank');
     } else if (method.name === "Zelle") {
       // For Zelle, you might want to show instructions or copy to clipboard
-      navigator.clipboard.writeText("404-207-2847");
-      alert("Phone number copied to clipboard! Open your Zelle app and send payment to 404-207-2847");
+      navigator.clipboard.writeText("470-223-8668");
+      alert("Phone number copied to clipboard! Open your Zelle app and send payment to 470-223-8668");
     } else if (method.name === "Cash App") {
       navigator.clipboard.writeText("$HouseofDiorr");
       alert("Cash tag copied to clipboard! Open Cash App and send payment to $HouseofDiorr");
     } else if (method.name === "Apple Pay") {
-      window.location.href = "tel:404-207-2847";
+      window.location.href = "tel:470-223-8668";
     }
   };
 
@@ -231,8 +231,8 @@ const Payment = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="lg" asChild>
-              <a href="tel:404-207-2847">
-                Call 404-207-2847
+              <a href="tel:470-223-8668">
+                Call 470-223-8668
               </a>
             </Button>
             

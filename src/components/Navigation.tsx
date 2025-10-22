@@ -62,7 +62,7 @@ const Navigation = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <div className="flex items-center space-x-2 text-sm text-navy-primary">
               <Phone size={16} />
-              <span>404-207-2847</span>
+              <span>470-223-8668</span>
             </div>
             <Button variant="hero" size="sm" asChild>
               <Link to="/contact" onClick={handleNavigation}>
@@ -102,7 +102,7 @@ const Navigation = () => {
               ))}
               <div className="flex items-center space-x-2 text-sm text-navy-primary pt-2 border-t">
                 <Phone size={16} />
-                <span>404-207-2847</span>
+                <span>470-223-8668</span>
               </div>
               <Button variant="hero" size="sm" className="w-full" asChild>
                 <Link to="/contact" onClick={handleNavigation}>
