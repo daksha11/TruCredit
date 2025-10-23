@@ -13,10 +13,12 @@
     --navy-dark: 220 96% 10%;           /* #011130 - Deep Navy */
     --navy-light: 217 45% 45%;          /* Lighter blue for accents */
     --blue-accent: 205 100% 60%;        /* Bright blue accent */
+    --blue-soft: 217 60% 92%;           /* Soft blue for backgrounds */
     --white-pure: 0 0% 100%;            /* #FFFFFF - Clean White */
     --gray-light: 220 13% 96%;          /* Light Gray for alt backgrounds */
     --gray-medium: 215 16% 65%;         /* Medium Gray for body text */
     --gray-dark: 217 35% 20%;           /* Dark Gray for secondary text */
+    --gold-star: 45 100% 51%;           /* Gold for stars ONLY */
 
     /* Gradient Definitions */
     --gradient-hero: linear-gradient(135deg, hsl(var(--navy-dark)), hsl(var(--navy-primary)));

@@ -179,7 +179,7 @@ const Index = () => {
             <div className="animate-fade-up">
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
                 Restore Your Credit.
-                <span className="block bg-gradient-to-r from-gold-accent to-yellow-400 bg-clip-text text-transparent">
+                <span className="block text-blue-accent">
                   Build Your Future.
                 </span>
               </h1>
@@ -207,13 +207,13 @@ const Index = () => {
         </section>
 
         {/* Highlights Section */}
-        <section ref={featuresRef} className="py-20 bg-gray-light">
+        <section ref={featuresRef} className="py-20 bg-navy-dark">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 animate-on-scroll">
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-primary mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Your Path to Financial Freedom
               </h2>
-              <p className="text-xl text-gray-medium max-w-3xl mx-auto">
+              <p className="text-xl text-gray-200 max-w-3xl mx-auto">
                 Transform your financial future with our comprehensive credit restoration and business building
                 services.
               </p>
@@ -223,23 +223,23 @@ const Index = () => {
               {highlights.map((highlight, index) => (
                 <Card
                   key={highlight.title}
-                  className={`hover-lift animate-on-scroll bg-white shadow-lg border-0`}
+                  className={`hover-lift animate-on-scroll bg-navy-primary border-blue-accent/20 shadow-xl`}
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <CardContent className="p-8 text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-gold-accent to-yellow-400 rounded-full mb-6">
-                      <highlight.icon className="h-8 w-8 text-navy-primary" />
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-accent rounded-full mb-6">
+                      <highlight.icon className="h-8 w-8 text-white" />
                     </div>
 
-                    <h3 className="text-2xl font-bold text-navy-primary mb-4">{highlight.title}</h3>
+                    <h3 className="text-2xl font-bold text-white mb-4">{highlight.title}</h3>
 
-                    <p className="text-gray-medium mb-6 leading-relaxed">{highlight.description}</p>
+                    <p className="text-gray-200 mb-6 leading-relaxed">{highlight.description}</p>
 
                     <ul className="space-y-2 text-sm">
                       {highlight.features.map((feature) => (
                         <li key={feature} className="flex items-center justify-center">
-                          <CheckCircle className="h-4 w-4 text-gold-accent mr-2" />
-                          <span className="text-gray-dark">{feature}</span>
+                          <CheckCircle className="h-4 w-4 text-blue-accent mr-2" />
+                          <span className="text-gray-200">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -249,7 +249,7 @@ const Index = () => {
             </div>
 
             <div className="text-center mt-12 animate-on-scroll">
-              <Button variant="navy" size="lg" asChild>
+              <Button variant="accent" size="lg" asChild>
                 <Link to="/services">
                   View All Services & Pricing
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -260,24 +260,24 @@ const Index = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 hero-gradient">
+        <section className="py-20 bg-blue-accent">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="animate-on-scroll">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Ready to Transform Your Credit?
               </h2>
-              <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl text-navy-dark mb-8 max-w-2xl mx-auto">
                 Join thousands of clients who have successfully restored their credit and built their financial future
                 with TruCredit.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="hero" size="xl" asChild>
+                <Button variant="navy" size="xl" asChild>
                   <Link to="/contact">Start Your Journey Today</Link>
                 </Button>
                 <Button
                   variant="outline"
                   size="xl"
-                  className="bg-white/10 border-white/30 text-white hover:bg-white/20"
+                  className="bg-white text-navy-primary border-white hover:bg-white/90"
                   asChild
                 >
                   <Link to="/how-it-works">Learn How It Works</Link>

@@ -90,7 +90,7 @@ const Services = () => {
           <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
             No hidden fees. Clear pricing. Results you can trust.
           </p>
-          <div className="flex items-center justify-center space-x-2 text-gold-accent">
+          <div className="flex items-center justify-center space-x-2 text-gold-star">
             <Star className="h-5 w-5 fill-current" />
             <Star className="h-5 w-5 fill-current" />
             <Star className="h-5 w-5 fill-current" />
@@ -102,7 +102,7 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-gray-light">
+      <section className="py-20 bg-navy-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {services.map((service, index) => (
@@ -110,9 +110,9 @@ const Services = () => {
                 key={service.title}
                 className={`relative flex flex-col hover-lift transition-all duration-300 ${
                   service.highlight 
-                    ? 'ring-2 ring-gold-accent shadow-xl scale-105' 
-                    : 'shadow-lg'
-                } bg-white border-0`}
+                    ? 'ring-2 ring-blue-accent shadow-xl scale-105 bg-blue-soft' 
+                    : 'shadow-lg bg-white'
+                } border-0`}
               >
                 {service.badge && (
                   <Badge className={`absolute -top-3 left-6 ${service.badgeColor} px-3 py-1`}>
@@ -126,7 +126,7 @@ const Services = () => {
                   </CardTitle>
                   
                   <div className="flex items-baseline space-x-2">
-                    <span className="text-4xl font-bold text-gold-accent">
+                    <span className="text-4xl font-bold text-blue-accent">
                       {service.price}
                     </span>
                     {service.originalPrice && (
@@ -150,7 +150,7 @@ const Services = () => {
                   <ul className="space-y-3 flex-grow">
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-gold-accent mr-3 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-5 w-5 text-blue-accent mr-3 mt-0.5 flex-shrink-0" />
                         <span className="text-gray-dark text-sm">{feature}</span>
                       </li>
                     ))}
@@ -158,7 +158,7 @@ const Services = () => {
                   
                   <div className="pt-4 mt-auto">
                     <Button 
-                      variant={service.highlight ? "hero" : "navy"} 
+                      variant={service.highlight ? "accent" : "navy"} 
                       className="w-full" 
                       asChild
                     >
@@ -183,24 +183,24 @@ const Services = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-20 bg-navy-primary">
+      <section className="py-20 bg-blue-accent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Have Questions About Our Services?
           </h2>
-          <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-navy-dark mb-8 max-w-2xl mx-auto">
             Speak with our credit experts to find the perfect solution for your financial goals.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="hero" size="lg" asChild>
+            <Button variant="navy" size="lg" asChild>
               <Link to="/contact">
                 <Phone className="mr-2 h-5 w-5" />
                 Call 470-223-8668
               </Link>
             </Button>
             
-            <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20" asChild>
+            <Button variant="outline" size="lg" className="bg-white text-navy-primary border-white hover:bg-white/90" asChild>
               <Link to="/faq">View FAQ</Link>
             </Button>
           </div>

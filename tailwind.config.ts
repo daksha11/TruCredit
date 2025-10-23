@@ -30,6 +30,10 @@ export default {
         },
         blue: {
           accent: "hsl(var(--blue-accent))",
+          soft: "hsl(var(--blue-soft))",
+        },
+        gold: {
+          star: "hsl(var(--gold-star))",
         },
         gray: {
           light: "hsl(var(--gray-light))",

@@ -162,7 +162,7 @@ const Testimonials = () => {
           <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
             Real results from real clients who transformed their financial lives with TruCredit
           </p>
-          <div className="flex items-center justify-center space-x-2 text-gold-accent">
+          <div className="flex items-center justify-center space-x-2 text-gold-star">
             <Star className="h-5 w-5 fill-current" />
             <Star className="h-5 w-5 fill-current" />
             <Star className="h-5 w-5 fill-current" />
@@ -174,15 +174,15 @@ const Testimonials = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-light">
+      <section className="py-16 bg-navy-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-gold-accent mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-blue-accent mb-2">
                   {stat.number}
                 </div>
-                <div className="text-navy-primary font-medium">
+                <div className="text-white font-medium">
                   {stat.label}
                 </div>
               </div>
@@ -192,13 +192,13 @@ const Testimonials = () => {
       </section>
 
       {/* Testimonials Carousel */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-blue-soft">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-navy-primary mb-4">
               Real Stories, Real Results
             </h2>
-            <p className="text-gray-medium text-lg max-w-2xl mx-auto">
+            <p className="text-gray-dark text-lg max-w-2xl mx-auto">
               Read how our clients achieved their financial goals and transformed their credit profiles
             </p>
           </div>
@@ -238,7 +238,7 @@ const Testimonials = () => {
                     {/* Rating */}
                     <div className="flex mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-current text-gold-accent" />
+                        <Star key={i} className="h-5 w-5 fill-current text-gold-star" />
                       ))}
                     </div>
 
@@ -253,7 +253,7 @@ const Testimonials = () => {
                     </p>
 
                     {/* Results */}
-                    <div className="bg-gray-light rounded-lg p-4 mb-6">
+                    <div className="bg-navy-primary/5 rounded-lg p-4 mb-6">
                       <div className="flex justify-between items-center">
                         <div className="text-center">
                           <div className="text-sm text-gray-medium">Before</div>
@@ -261,10 +261,10 @@ const Testimonials = () => {
                             {testimonial.beforeScore}
                           </div>
                         </div>
-                        <ArrowRight className="h-5 w-5 text-gold-accent" />
+                        <ArrowRight className="h-5 w-5 text-blue-accent" />
                         <div className="text-center">
                           <div className="text-sm text-gray-medium">After</div>
-                          <div className="text-lg font-bold text-gold-accent">
+                          <div className="text-lg font-bold text-blue-accent">
                             {testimonial.afterScore}
                           </div>
                         </div>
@@ -294,7 +294,7 @@ const Testimonials = () => {
                   className={`w-3 h-3 rounded-full transition-all ${
                     currentIndex >= index * testimonialsPerView && 
                     currentIndex < (index + 1) * testimonialsPerView
-                      ? 'bg-gold-accent'
+                      ? 'bg-blue-accent'
                       : 'bg-gray-300'
                   }`}
                   aria-label={`Go to testimonial group ${index + 1}`}
@@ -306,32 +306,32 @@ const Testimonials = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-navy-primary">
+      <section className="py-20 bg-blue-accent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Ready to Write Your Success Story?
           </h2>
-          <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-navy-dark mb-8 max-w-2xl mx-auto">
             Join thousands of clients who have transformed their financial lives with TruCredit
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="hero" size="lg" asChild>
+            <Button variant="navy" size="lg" asChild>
               <Link to="/contact">
                 <Phone className="mr-2 h-5 w-5" />
                 Start Your Journey
               </Link>
             </Button>
             
-            <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20" asChild>
+            <Button variant="outline" size="lg" className="bg-white text-navy-primary border-white hover:bg-white/90" asChild>
               <Link to="/services">View Our Services</Link>
             </Button>
           </div>
 
-          <div className="mt-8 text-gray-200">
+          <div className="mt-8 text-navy-dark">
             <p className="text-lg">
               <Phone className="inline h-5 w-5 mr-2" />
-              Call us directly: <span className="text-gold-accent font-semibold">470-223-8668</span>
+              Call us directly: <span className="text-white font-semibold">470-223-8668</span>
             </p>
           </div>
         </div>
