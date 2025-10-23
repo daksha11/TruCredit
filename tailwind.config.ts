@@ -25,10 +25,11 @@ export default {
         navy: {
           DEFAULT: "hsl(var(--navy-primary))",
           primary: "hsl(var(--navy-primary))",
+          dark: "hsl(var(--navy-dark))",
+          light: "hsl(var(--navy-light))",
         },
-        gold: {
-          DEFAULT: "hsl(var(--gold-accent))",
-          accent: "hsl(var(--gold-accent))",
+        blue: {
+          accent: "hsl(var(--blue-accent))",
         },
         gray: {
           light: "hsl(var(--gray-light))",

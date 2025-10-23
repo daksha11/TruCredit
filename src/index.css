@@ -4,28 +4,30 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TruCredit Design System - Classic & Trustworthy */
+/* TruCredit Design System - Modern Blue Palette */
 
 @layer base {
   :root {
     /* Core Brand Colors */
-    --navy-primary: 215 45% 17%;        /* #1E2A38 - Trustworthy Navy */
-    --gold-accent: 46 72% 53%;          /* #D4AF37 - Premium Gold */
+    --navy-primary: 217 51% 26%;        /* #213966 - Primary Blue */
+    --navy-dark: 220 96% 10%;           /* #011130 - Deep Navy */
+    --navy-light: 217 45% 45%;          /* Lighter blue for accents */
+    --blue-accent: 205 100% 60%;        /* Bright blue accent */
     --white-pure: 0 0% 100%;            /* #FFFFFF - Clean White */
     --gray-light: 220 13% 96%;          /* Light Gray for alt backgrounds */
     --gray-medium: 215 16% 65%;         /* Medium Gray for body text */
-    --gray-dark: 215 25% 27%;           /* Dark Gray for secondary text */
+    --gray-dark: 217 35% 20%;           /* Dark Gray for secondary text */
 
     /* Gradient Definitions */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--navy-primary)), hsl(215 50% 25%));
-    --gradient-gold: linear-gradient(135deg, hsl(var(--gold-accent)), hsl(46 72% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--navy-dark)), hsl(var(--navy-primary)));
+    --gradient-blue: linear-gradient(135deg, hsl(var(--navy-primary)), hsl(var(--navy-light)));
     --gradient-card: linear-gradient(145deg, hsl(var(--white-pure)), hsl(var(--gray-light)));
 
     /* Shadows */
     --shadow-card: 0 4px 6px -1px hsl(var(--navy-primary) / 0.1), 0 2px 4px -1px hsl(var(--navy-primary) / 0.06);
-    --shadow-card-hover: 0 10px 15px -3px hsl(var(--navy-primary) / 0.1), 0 4px 6px -2px hsl(var(--navy-primary) / 0.05);
-    --shadow-hero: 0 25px 50px -12px hsl(var(--navy-primary) / 0.25);
-    --shadow-gold: 0 0 30px hsl(var(--gold-accent) / 0.3);
+    --shadow-card-hover: 0 10px 15px -3px hsl(var(--navy-primary) / 0.15), 0 4px 6px -2px hsl(var(--navy-primary) / 0.08);
+    --shadow-hero: 0 25px 50px -12px hsl(var(--navy-dark) / 0.3);
+    --shadow-blue: 0 0 30px hsl(var(--blue-accent) / 0.2);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -33,32 +35,32 @@
 
     /* Design Mapping */
     --background: var(--white-pure);
-    --foreground: var(--navy-primary);
+    --foreground: var(--navy-dark);
 
     --card: var(--white-pure);
-    --card-foreground: var(--navy-primary);
+    --card-foreground: var(--navy-dark);
 
     --popover: var(--white-pure);
-    --popover-foreground: var(--navy-primary);
+    --popover-foreground: var(--navy-dark);
 
     --primary: var(--navy-primary);              /* Headers, nav, CTA buttons */
     --primary-foreground: var(--white-pure);
 
     --secondary: var(--gray-light);             /* Alternate backgrounds */
-    --secondary-foreground: var(--navy-primary);
+    --secondary-foreground: var(--navy-dark);
 
     --muted: var(--gray-light);
     --muted-foreground: var(--gray-medium);
 
-    --accent: var(--gold-accent);               /* Icons, highlights, key stats */
-    --accent-foreground: var(--navy-primary);
+    --accent: var(--blue-accent);               /* Icons, highlights, key stats */
+    --accent-foreground: var(--white-pure);
 
     --destructive: 0 84% 60%;
     --destructive-foreground: var(--white-pure);
 
     --border: var(--gray-light);
     --input: var(--gray-light);
-    --ring: var(--gold-accent);
+    --ring: var(--blue-accent);
 
     --radius: 0.75rem;
   }
@@ -85,8 +87,8 @@
     background: var(--gradient-hero);
   }
 
-  .gold-gradient {
-    background: var(--gradient-gold);
+  .blue-gradient {
+    background: var(--gradient-blue);
   }
 
   .card-gradient {
@@ -122,8 +124,8 @@
     box-shadow: var(--shadow-card-hover);
   }
 
-  .hover-gold:hover {
-    box-shadow: var(--shadow-gold);
+  .hover-blue:hover {
+    box-shadow: var(--shadow-blue);
   }
 
   /* Timeline */
@@ -139,7 +141,7 @@
     top: 2.5rem;
     bottom: -1rem;
     width: 2px;
-    background: linear-gradient(to bottom, hsl(var(--gold-accent)), transparent);
+    background: linear-gradient(to bottom, hsl(var(--blue-accent)), transparent);
   }
 
   .timeline-step:last-child::before {
@@ -153,8 +155,8 @@
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
-    background: var(--gradient-gold);
-    color: hsl(var(--navy-primary));
+    background: var(--gradient-blue);
+    color: hsl(var(--white-pure));
     display: flex;
     align-items: center;
     justify-content: center;
