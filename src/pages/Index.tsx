@@ -271,7 +271,7 @@ const Index = () => {
                 with TruCredit.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="navy" size="xl" asChild>
+                <Button variant="premium" size="xl" asChild>
                   <Link to="/contact">Start Your Journey Today</Link>
                 </Button>
                 <Button

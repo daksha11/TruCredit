@@ -9,18 +9,18 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-lg",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "border-2 border-input bg-background hover:bg-accent/10 hover:text-accent hover:border-accent transition-all duration-300",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-to-r from-navy-primary to-navy-light text-white hover:from-navy-light hover:to-blue-accent transform hover:scale-105 shadow-lg hover:shadow-xl font-semibold",
-        navy: "bg-navy-primary text-white hover:bg-navy-primary/90 shadow-md hover:shadow-lg",
-        accent: "bg-blue-accent text-white hover:bg-blue-accent/90 shadow-md hover:shadow-lg font-semibold",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-md",
+        ghost: "hover:bg-accent/10 hover:text-accent transition-all duration-300",
+        link: "text-accent underline-offset-4 hover:underline",
+        hero: "bg-gradient-to-r from-electric-blue to-cyan-bright text-white hover:shadow-2xl hover:scale-105 transform transition-all duration-300 font-bold pulse-glow",
+        premium: "bg-gradient-to-r from-purple-accent to-indigo text-white hover:shadow-2xl hover:scale-105 transform transition-all duration-300 font-bold",
+        accent: "bg-electric-blue text-white hover:bg-cyan-bright shadow-lg hover:shadow-xl transition-all duration-300 font-semibold",
       },
       size: {
         default: "h-10 px-4 py-2",

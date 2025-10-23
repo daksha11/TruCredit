@@ -158,7 +158,7 @@ const Services = () => {
                   
                   <div className="pt-4 mt-auto">
                     <Button 
-                      variant={service.highlight ? "accent" : "navy"} 
+                      variant={service.highlight ? "hero" : "default"} 
                       className="w-full" 
                       asChild
                     >
@@ -193,7 +193,7 @@ const Services = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="navy" size="lg" asChild>
+            <Button variant="accent" size="lg" asChild>
               <Link to="/contact">
                 <Phone className="mr-2 h-5 w-5" />
                 Call 470-223-8668

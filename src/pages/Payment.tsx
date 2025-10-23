@@ -148,7 +148,7 @@ const Payment = () => {
                   )}
                   
                   <Button 
-                    variant="navy" 
+                    variant="default" 
                     className="w-full" 
                     onClick={() => handlePaymentClick(method)}
                   >
