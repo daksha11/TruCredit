@@ -20,24 +20,24 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-navy-primary text-white">
+    <footer className="bg-footer text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Company Info + Contact */}
           <div className="space-y-4">
-            <div className="bg-gradient-to-r from-gold-accent to-yellow-400 text-navy-primary px-3 py-2 rounded-lg font-bold text-xl inline-block">
+            <div className="bg-white text-footer px-3 py-2 rounded-lg font-bold text-xl inline-block">
               TruCredit
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
               Your partner in credit success. We empower individuals and small businesses to achieve financial freedom through credit restoration and business credit building.
             </p>
             <div className="flex items-center space-x-2 text-sm">
-              <Instagram size={16} className="text-gold-accent" />
+              <Instagram size={16} className="text-card-3" />
               <a
                 href="https://instagram.com/TheTruCredit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-gold-accent transition-colors"
+                className="hover:text-card-3 transition-colors"
               >
                 @TheTruCredit
               </a>
@@ -46,20 +46,20 @@ const Footer = () => {
             {/* Contact Info directly under Instagram */}
             <div className="space-y-3 pt-2">
               <div className="flex items-center space-x-2 text-sm">
-                <Phone size={16} className="text-gold-accent" />
+                <Phone size={16} className="text-card-3" />
                 <a
                   href="tel:470-223-8668"
-                  className="hover:text-gold-accent transition-colors"
+                  className="hover:text-card-3 transition-colors"
                 >
                   470-223-8668
                 </a>
               </div>
               <div className="flex items-center space-x-2 text-sm">
-                <Mail size={16} className="text-gold-accent" />
+                <Mail size={16} className="text-card-3" />
                 <span className="text-gray-300">Available for consultation</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
-                <MapPin size={16} className="text-gold-accent" />
+                <MapPin size={16} className="text-card-3" />
                 <span className="text-gray-300">Serving nationwide</span>
               </div>
             </div>
@@ -67,13 +67,13 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gold-accent">Quick Links</h3>
+            <h3 className="text-lg font-semibold text-heading">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-gray-300 hover:text-gold-accent transition-colors text-sm"
+                    className="text-gray-300 hover:text-card-3 transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -84,13 +84,13 @@ const Footer = () => {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gold-accent">Our Services</h3>
+            <h3 className="text-lg font-semibold text-heading">Our Services</h3>
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service}>
                   <Link
                     to="/services"
-                    className="text-gray-300 hover:text-gold-accent transition-colors text-sm"
+                    className="text-gray-300 hover:text-card-3 transition-colors text-sm"
                   >
                     {service}
                   </Link>
@@ -108,13 +108,13 @@ const Footer = () => {
           <div className="flex space-x-6 text-sm">
             <Link
               to="/privacy"
-              className="text-gray-300 hover:text-gold-accent transition-colors"
+              className="text-gray-300 hover:text-card-3 transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
               to="/terms"
-              className="text-gray-300 hover:text-gold-accent transition-colors"
+              className="text-gray-300 hover:text-card-3 transition-colors"
             >
               Terms of Service
             </Link>

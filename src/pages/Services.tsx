@@ -18,7 +18,7 @@ const Services = () => {
         "Expert recommendations"
       ],
       badge: "Most Popular",
-      badgeColor: "bg-gold-accent text-navy-primary"
+      badgeColor: "bg-card-3 text-white"
     },
     {
       title: "Auto & Home Purchasing Assistance",
@@ -32,7 +32,7 @@ const Services = () => {
         "Documentation guidance"
       ],
       badge: "Limited Time",
-      badgeColor: "bg-navy-primary text-white"
+      badgeColor: "bg-navbar text-white"
     },
     {
       title: "Credit Intake / Restoration",
@@ -82,12 +82,12 @@ const Services = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Header Section */}
-      <section className="py-20 bg-gradient-to-br from-navy-primary to-navy-primary/90">
+      <section className="py-20 bg-navbar">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-heading mb-6">
             Affordable, Transparent Services
           </h1>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-white max-w-3xl mx-auto mb-8">
             No hidden fees. Clear pricing. Results you can trust.
           </p>
           <div className="flex items-center justify-center space-x-2 text-gold-star">
@@ -102,7 +102,7 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-navy-primary">
+      <section className="py-20 bg-card-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {services.map((service, index) => (
@@ -110,7 +110,7 @@ const Services = () => {
                 key={service.title}
                 className={`relative flex flex-col hover-lift transition-all duration-300 ${
                   service.highlight 
-                    ? 'ring-2 ring-blue-accent shadow-xl scale-105 bg-blue-soft' 
+                    ? 'ring-2 ring-card-1 shadow-xl scale-105 bg-card-3/20' 
                     : 'shadow-lg bg-white'
                 } border-0`}
               >
@@ -121,37 +121,37 @@ const Services = () => {
                 )}
                 
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-2xl font-bold text-navy-primary mb-2">
+                  <CardTitle className="text-2xl font-bold text-heading mb-2">
                     {service.title}
                   </CardTitle>
                   
                   <div className="flex items-baseline space-x-2">
-                    <span className="text-4xl font-bold text-blue-accent">
+                    <span className="text-4xl font-bold text-card-1">
                       {service.price}
                     </span>
                     {service.originalPrice && (
-                      <span className="text-sm text-gray-medium line-through">
+                      <span className="text-sm text-gray-600 line-through">
                         {service.originalPrice}
                       </span>
                     )}
                   </div>
                   
-                  <div className="flex items-center text-gray-medium text-sm">
+                  <div className="flex items-center text-gray-600 text-sm">
                     <Clock className="h-4 w-4 mr-1" />
                     {service.duration}
                   </div>
                 </CardHeader>
                 
                 <CardContent className="flex flex-col flex-grow space-y-6">
-                  <p className="text-gray-dark leading-relaxed">
+                  <p className="text-text-secondary leading-relaxed">
                     {service.description}
                   </p>
                   
                   <ul className="space-y-3 flex-grow">
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-blue-accent mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-dark text-sm">{feature}</span>
+                        <CheckCircle className="h-5 w-5 text-card-1 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-text-secondary text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -183,12 +183,12 @@ const Services = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-20 bg-blue-accent">
+      <section className="py-20 bg-card-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
+          <h2 className="text-4xl font-bold text-heading mb-6">
             Have Questions About Our Services?
           </h2>
-          <p className="text-xl text-navy-dark mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
             Speak with our credit experts to find the perfect solution for your financial goals.
           </p>
           
@@ -200,7 +200,7 @@ const Services = () => {
               </Link>
             </Button>
             
-            <Button variant="outline" size="lg" className="bg-white text-navy-primary border-white hover:bg-white/90" asChild>
+            <Button variant="outline" size="lg" className="bg-white text-text-primary border-white hover:bg-white/90" asChild>
               <Link to="/faq">View FAQ</Link>
             </Button>
           </div>

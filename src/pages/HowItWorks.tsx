@@ -83,12 +83,12 @@ const HowItWorks = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Header */}
-      <section className="py-20 bg-gradient-to-br from-navy-primary to-navy-primary/90">
+      <section className="py-20 bg-navbar">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-heading mb-6">
             How It Works
           </h1>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Our proven processes for credit restoration and business credit building
           </p>
         </div>
@@ -98,10 +98,10 @@ const HowItWorks = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-navy-primary mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-heading mb-6">
               Erase Negatives. Rebuild Fast.
             </h2>
-            <p className="text-xl text-gray-medium max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
               Our credit sweep process removes about 80% of negative items within 30–45 days, 
               helping you rebuild a healthy credit profile.
             </p>
@@ -109,15 +109,15 @@ const HowItWorks = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {creditSweepSteps.map((step, index) => (
-              <Card key={step.title} className="hover-lift bg-gradient-to-br from-white to-gray-light border-0 shadow-lg">
+              <Card key={step.title} className="hover-lift bg-gradient-to-br from-white to-card-4 border-0 shadow-lg">
                 <CardContent className="p-8 text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-gold-accent to-yellow-400 rounded-full mb-6">
-                    <step.icon className="h-8 w-8 text-navy-primary" />
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-card-2 to-card-3 rounded-full mb-6">
+                    <step.icon className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-navy-primary mb-4">
+                  <h3 className="text-2xl font-bold text-heading mb-4">
                     {step.title}
                   </h3>
-                  <p className="text-gray-medium leading-relaxed">
+                  <p className="text-text-secondary leading-relaxed">
                     {step.description}
                   </p>
                 </CardContent>
@@ -125,15 +125,15 @@ const HowItWorks = () => {
             ))}
           </div>
 
-          <div className="bg-navy-primary rounded-2xl p-8 md:p-12 text-center">
+          <div className="bg-navbar rounded-2xl p-8 md:p-12 text-center">
             <div className="flex items-center justify-center space-x-2 mb-6">
-              <Clock className="h-6 w-6 text-gold-accent" />
-              <span className="text-gold-accent font-semibold text-lg">Typical Timeline</span>
+              <Clock className="h-6 w-6 text-card-3" />
+              <span className="text-card-3 font-semibold text-lg">Typical Timeline</span>
             </div>
-            <h3 className="text-3xl font-bold text-white mb-4">
+            <h3 className="text-3xl font-bold text-heading mb-4">
               See Results in 30-45 Days
             </h3>
-            <p className="text-gray-200 text-lg mb-6 max-w-2xl mx-auto">
+            <p className="text-white text-lg mb-6 max-w-2xl mx-auto">
               Most clients see significant improvements to their credit score within the first month of our credit sweep process.
             </p>
             <Button variant="hero" size="lg" asChild>
@@ -144,13 +144,13 @@ const HowItWorks = () => {
       </section>
 
       {/* Business Credit Section */}
-      <section className="py-20 bg-gray-light">
+      <section className="py-20 bg-card-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-navy-primary mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-heading mb-6">
               7 Steps to Business Credit Success
             </h2>
-            <p className="text-xl text-gray-medium max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
               Our comprehensive program builds real business credit in 7 strategic steps, 
               giving your company the financial power it needs to grow.
             </p>
@@ -170,15 +170,15 @@ const HowItWorks = () => {
                   <CardContent className="p-8">
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0">
-                        <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-gold-accent to-yellow-400 rounded-lg">
-                          <step.icon className="h-6 w-6 text-navy-primary" />
+                        <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-card-2 to-card-3 rounded-lg">
+                          <step.icon className="h-6 w-6 text-white" />
                         </div>
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-navy-primary mb-3">
+                        <h3 className="text-2xl font-bold text-heading mb-3">
                           {step.title}
                         </h3>
-                        <p className="text-gray-medium leading-relaxed text-lg">
+                        <p className="text-text-secondary leading-relaxed text-lg">
                           {step.description}
                         </p>
                       </div>
@@ -190,12 +190,12 @@ const HowItWorks = () => {
           </div>
 
           <div className="mt-16 text-center">
-            <Card className="bg-gradient-to-r from-gold-accent to-yellow-400 border-0 shadow-xl">
+            <Card className="bg-gradient-to-r from-card-2 to-card-3 border-0 shadow-xl">
               <CardContent className="p-8 md:p-12">
-                <h3 className="text-3xl font-bold text-navy-primary mb-4">
+                <h3 className="text-3xl font-bold text-heading mb-4">
                   Ready to Build Business Credit?
                 </h3>
-                <p className="text-navy-primary/80 text-lg mb-6 max-w-2xl mx-auto">
+                <p className="text-white text-lg mb-6 max-w-2xl mx-auto">
                   Our 7-step program typically takes 3-6 months and gives you access to substantial business funding.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -205,7 +205,7 @@ const HowItWorks = () => {
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
-                  <Button variant="outline" size="lg" className="border-navy-primary text-navy-primary hover:bg-navy-primary hover:text-white" asChild>
+                  <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-card-2" asChild>
                     <Link to="/contact">Schedule Consultation</Link>
                   </Button>
                 </div>
@@ -216,23 +216,23 @@ const HowItWorks = () => {
       </section>
 
       {/* Results Section */}
-      <section className="py-20 bg-navy-primary">
+      <section className="py-20 bg-navbar">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-12">
+          <h2 className="text-4xl font-bold text-heading mb-12">
             Proven Results
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="text-5xl font-bold text-gold-accent mb-2">80%</div>
+              <div className="text-5xl font-bold text-card-3 mb-2">80%</div>
               <div className="text-white text-lg">Negative Items Removed</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold text-gold-accent mb-2">30-45</div>
+              <div className="text-5xl font-bold text-card-3 mb-2">30-45</div>
               <div className="text-white text-lg">Days to See Results</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold text-gold-accent mb-2">$300K</div>
+              <div className="text-5xl font-bold text-card-3 mb-2">$300K</div>
               <div className="text-white text-lg">Max Funding Access</div>
             </div>
           </div>

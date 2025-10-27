@@ -30,12 +30,12 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-navbar shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2" onClick={handleNavigation}>
-            <div className="bg-gradient-to-r from-gold-accent to-yellow-400 text-navy-primary px-3 py-2 rounded-lg font-bold text-xl">
+            <div className="bg-white text-navbar px-3 py-2 rounded-lg font-bold text-xl">
               TruCredit
             </div>
           </Link>
@@ -46,10 +46,10 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`text-sm font-medium transition-colors duration-300 hover:text-gold-accent ${
+                className={`text-sm font-medium transition-colors duration-300 hover:text-heading ${
                   location.pathname === item.path
-                    ? "text-gold-accent"
-                    : "text-navy-primary"
+                    ? "text-heading"
+                    : "text-white"
                 }`}
                 onClick={handleNavigation}
               >
@@ -60,7 +60,7 @@ const Navigation = () => {
 
           {/* Contact Info & CTA */}
           <div className="hidden lg:flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-sm text-navy-primary">
+            <div className="flex items-center space-x-2 text-sm text-white">
               <Phone size={16} />
               <span>470-223-8668</span>
             </div>
@@ -73,7 +73,7 @@ const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-navy-primary"
+            className="lg:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
@@ -92,15 +92,15 @@ const Navigation = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`text-navy-primary font-medium transition-colors duration-300 hover:text-gold-accent ${
-                    location.pathname === item.path ? "text-gold-accent" : ""
+                  className={`text-text-primary font-medium transition-colors duration-300 hover:text-card-1 ${
+                    location.pathname === item.path ? "text-card-1" : ""
                   }`}
                   onClick={handleNavigation}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="flex items-center space-x-2 text-sm text-navy-primary pt-2 border-t">
+              <div className="flex items-center space-x-2 text-sm text-text-primary pt-2 border-t">
                 <Phone size={16} />
                 <span>470-223-8668</span>
               </div>

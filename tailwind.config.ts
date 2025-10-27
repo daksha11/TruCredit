@@ -23,22 +23,21 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        midnight: "hsl(var(--midnight))",
-        navy: {
-          deep: "hsl(var(--navy-deep))",
-          primary: "hsl(var(--navy-primary))",
-          medium: "hsl(var(--navy-medium))",
+        navbar: "hsl(var(--navbar))",
+        footer: "hsl(var(--footer))",
+        heading: "hsl(var(--heading))",
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+          1: "hsl(var(--card-1))",
+          2: "hsl(var(--card-2))",
+          3: "hsl(var(--card-3))",
+          4: "hsl(var(--card-4))",
         },
-        electric: {
-          blue: "hsl(var(--electric-blue))",
+        text: {
+          primary: "hsl(var(--text-primary))",
+          secondary: "hsl(var(--text-secondary))",
         },
-        cyan: {
-          bright: "hsl(var(--cyan-bright))",
-        },
-        purple: {
-          accent: "hsl(var(--purple-accent))",
-        },
-        indigo: "hsl(var(--indigo))",
         gold: {
           star: "hsl(var(--gold-star))",
         },
@@ -73,10 +72,6 @@ export default {
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
         },
       },
       borderRadius: {
@@ -133,18 +128,18 @@ export default {
         },
         "glow": {
           "0%, 100%": {
-            filter: "drop-shadow(0 0 20px hsl(var(--electric-blue) / 0.5))",
+            filter: "drop-shadow(0 0 20px hsl(var(--card-1) / 0.4))",
           },
           "50%": {
-            filter: "drop-shadow(0 0 40px hsl(var(--cyan-bright) / 0.8))",
+            filter: "drop-shadow(0 0 35px hsl(var(--card-3) / 0.6))",
           },
         },
         "pulse-glow": {
           "0%, 100%": {
-            boxShadow: "0 10px 15px -3px hsl(var(--midnight) / 0.15), 0 0 20px hsl(var(--electric-blue) / 0.4)",
+            boxShadow: "0 10px 15px -3px hsl(var(--navbar) / 0.15), 0 0 20px hsl(var(--card-1) / 0.3)",
           },
           "50%": {
-            boxShadow: "0 20px 25px -5px hsl(var(--midnight) / 0.2), 0 0 40px hsl(var(--cyan-bright) / 0.6)",
+            boxShadow: "0 20px 25px -5px hsl(var(--navbar) / 0.2), 0 0 35px hsl(var(--card-3) / 0.5)",
           },
         },
       },

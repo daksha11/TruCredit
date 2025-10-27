@@ -154,12 +154,12 @@ const Testimonials = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Header Section */}
-      <section className="py-20 bg-gradient-to-br from-navy-primary to-navy-primary/90">
+      <section className="py-20 bg-navbar">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-heading mb-6">
             Client Success Stories
           </h1>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-white max-w-3xl mx-auto mb-8">
             Real results from real clients who transformed their financial lives with TruCredit
           </p>
           <div className="flex items-center justify-center space-x-2 text-gold-star">
@@ -174,12 +174,12 @@ const Testimonials = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-navy-primary">
+      <section className="py-16 bg-card-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-blue-accent mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-heading mb-2">
                   {stat.number}
                 </div>
                 <div className="text-white font-medium">
@@ -192,13 +192,13 @@ const Testimonials = () => {
       </section>
 
       {/* Testimonials Carousel */}
-      <section className="py-20 bg-blue-soft">
+      <section className="py-20 bg-card-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy-primary mb-4">
+            <h2 className="text-4xl font-bold text-heading mb-4">
               Real Stories, Real Results
             </h2>
-            <p className="text-gray-dark text-lg max-w-2xl mx-auto">
+            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
               Read how our clients achieved their financial goals and transformed their credit profiles
             </p>
           </div>
@@ -211,7 +211,7 @@ const Testimonials = () => {
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors"
               aria-label="Previous testimonials"
             >
-              <ChevronLeft className="h-6 w-6 text-navy-primary" />
+              <ChevronLeft className="h-6 w-6 text-navbar" />
             </button>
 
             <button
@@ -219,7 +219,7 @@ const Testimonials = () => {
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors"
               aria-label="Next testimonials"
             >
-              <ChevronRight className="h-6 w-6 text-navy-primary" />
+              <ChevronRight className="h-6 w-6 text-navbar" />
             </button>
 
             {/* Testimonials Grid */}
@@ -231,7 +231,7 @@ const Testimonials = () => {
                 >
                   <CardContent className="p-6">
                     {/* Quote Icon */}
-                    <div className="absolute top-6 right-6 text-gold-accent/20">
+                    <div className="absolute top-6 right-6 text-card-3/20">
                       <Quote className="h-12 w-12" />
                     </div>
 
@@ -243,28 +243,28 @@ const Testimonials = () => {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-bold text-navy-primary mb-4">
+                    <h3 className="text-xl font-bold text-heading mb-4">
                       {testimonial.title}
                     </h3>
 
                     {/* Content */}
-                    <p className="text-gray-dark leading-relaxed mb-6">
+                    <p className="text-text-secondary leading-relaxed mb-6">
                       "{testimonial.content}"
                     </p>
 
                     {/* Results */}
-                    <div className="bg-navy-primary/5 rounded-lg p-4 mb-6">
+                    <div className="bg-card-4 rounded-lg p-4 mb-6">
                       <div className="flex justify-between items-center">
                         <div className="text-center">
-                          <div className="text-sm text-gray-medium">Before</div>
-                          <div className="text-lg font-bold text-navy-primary">
+                          <div className="text-sm text-gray-600">Before</div>
+                          <div className="text-lg font-bold text-navbar">
                             {testimonial.beforeScore}
                           </div>
                         </div>
-                        <ArrowRight className="h-5 w-5 text-blue-accent" />
+                        <ArrowRight className="h-5 w-5 text-card-1" />
                         <div className="text-center">
-                          <div className="text-sm text-gray-medium">After</div>
-                          <div className="text-lg font-bold text-blue-accent">
+                          <div className="text-sm text-gray-600">After</div>
+                          <div className="text-lg font-bold text-card-1">
                             {testimonial.afterScore}
                           </div>
                         </div>
@@ -273,10 +273,10 @@ const Testimonials = () => {
 
                     {/* Footer */}
                     <div className="border-t pt-4">
-                      <div className="font-semibold text-navy-primary">
+                      <div className="font-semibold text-navbar">
                         {testimonial.name}
                       </div>
-                      <div className="text-sm text-gray-medium">
+                      <div className="text-sm text-gray-600">
                         {testimonial.location} • {testimonial.service}
                       </div>
                     </div>
@@ -294,7 +294,7 @@ const Testimonials = () => {
                   className={`w-3 h-3 rounded-full transition-all ${
                     currentIndex >= index * testimonialsPerView && 
                     currentIndex < (index + 1) * testimonialsPerView
-                      ? 'bg-blue-accent'
+                      ? 'bg-card-1'
                       : 'bg-gray-300'
                   }`}
                   aria-label={`Go to testimonial group ${index + 1}`}
@@ -306,12 +306,12 @@ const Testimonials = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-blue-accent">
+      <section className="py-20 bg-card-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
+          <h2 className="text-4xl font-bold text-heading mb-6">
             Ready to Write Your Success Story?
           </h2>
-          <p className="text-xl text-navy-dark mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
             Join thousands of clients who have transformed their financial lives with TruCredit
           </p>
           
@@ -323,15 +323,15 @@ const Testimonials = () => {
               </Link>
             </Button>
             
-            <Button variant="outline" size="lg" className="bg-white text-navy-primary border-white hover:bg-white/90" asChild>
+            <Button variant="outline" size="lg" className="bg-white text-text-primary border-white hover:bg-white/90" asChild>
               <Link to="/services">View Our Services</Link>
             </Button>
           </div>
 
-          <div className="mt-8 text-navy-dark">
+          <div className="mt-8 text-white">
             <p className="text-lg">
               <Phone className="inline h-5 w-5 mr-2" />
-              Call us directly: <span className="text-white font-semibold">470-223-8668</span>
+              Call us directly: <span className="font-semibold">470-223-8668</span>
             </p>
           </div>
         </div>

@@ -13,14 +13,14 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-lg",
         outline:
-          "border-2 border-input bg-background hover:bg-accent/10 hover:text-accent hover:border-accent transition-all duration-300",
+          "border-2 border-navbar bg-white hover:bg-card-4/50 hover:border-card-1 transition-all duration-300 text-text-primary",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-md",
-        ghost: "hover:bg-accent/10 hover:text-accent transition-all duration-300",
-        link: "text-accent underline-offset-4 hover:underline",
-        hero: "bg-gradient-to-r from-electric-blue to-cyan-bright text-white hover:shadow-2xl hover:scale-105 transform transition-all duration-300 font-bold pulse-glow",
-        premium: "bg-gradient-to-r from-purple-accent to-indigo text-white hover:shadow-2xl hover:scale-105 transform transition-all duration-300 font-bold",
-        accent: "bg-electric-blue text-white hover:bg-cyan-bright shadow-lg hover:shadow-xl transition-all duration-300 font-semibold",
+        ghost: "hover:bg-card-4/50 hover:text-card-1 transition-all duration-300 text-text-primary",
+        link: "text-card-1 underline-offset-4 hover:underline",
+        hero: "bg-gradient-to-r from-card-1 to-card-3 text-white hover:shadow-2xl hover:scale-105 transform transition-all duration-300 font-bold pulse-glow",
+        premium: "bg-gradient-to-r from-card-2 to-card-3 text-white hover:shadow-2xl hover:scale-105 transform transition-all duration-300 font-bold",
+        accent: "bg-card-1 text-white hover:bg-card-2 shadow-lg hover:shadow-xl transition-all duration-300 font-semibold",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -166,20 +166,20 @@ const Index = () => {
         {/* Hero Section */}
         <section
           ref={heroRef}
-          className="relative min-h-screen flex items-center justify-center hero-gradient overflow-hidden"
+          className="relative min-h-screen flex items-center justify-center overflow-hidden"
           style={{
-            backgroundImage: `linear-gradient(rgba(30, 42, 56, 0.8), rgba(30, 42, 56, 0.8)), url(${heroImage})`,
+            backgroundImage: `linear-gradient(rgba(33, 57, 102, 0.9), rgba(33, 57, 102, 0.8)), url(${heroImage})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-primary/90 via-navy-primary/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-navbar/90 via-navbar/70 to-transparent"></div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="animate-fade-up">
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
                 Restore Your Credit.
-                <span className="block text-blue-accent">
+                <span className="block text-heading">
                   Build Your Future.
                 </span>
               </h1>
@@ -207,13 +207,13 @@ const Index = () => {
         </section>
 
         {/* Highlights Section */}
-        <section ref={featuresRef} className="py-20 bg-navy-dark">
+        <section ref={featuresRef} className="py-20 bg-card-1">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 animate-on-scroll">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-heading mb-6">
                 Your Path to Financial Freedom
               </h2>
-              <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+              <p className="text-xl text-white max-w-3xl mx-auto">
                 Transform your financial future with our comprehensive credit restoration and business building
                 services.
               </p>
@@ -223,23 +223,23 @@ const Index = () => {
               {highlights.map((highlight, index) => (
                 <Card
                   key={highlight.title}
-                  className={`hover-lift animate-on-scroll bg-navy-primary border-blue-accent/20 shadow-xl`}
+                  className={`hover-lift animate-on-scroll bg-white border-card-2/20 shadow-xl`}
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <CardContent className="p-8 text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-accent rounded-full mb-6">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-card-3 rounded-full mb-6">
                       <highlight.icon className="h-8 w-8 text-white" />
                     </div>
 
-                    <h3 className="text-2xl font-bold text-white mb-4">{highlight.title}</h3>
+                    <h3 className="text-2xl font-bold text-heading mb-4">{highlight.title}</h3>
 
-                    <p className="text-gray-200 mb-6 leading-relaxed">{highlight.description}</p>
+                    <p className="text-text-secondary mb-6 leading-relaxed">{highlight.description}</p>
 
                     <ul className="space-y-2 text-sm">
                       {highlight.features.map((feature) => (
                         <li key={feature} className="flex items-center justify-center">
-                          <CheckCircle className="h-4 w-4 text-blue-accent mr-2" />
-                          <span className="text-gray-200">{feature}</span>
+                          <CheckCircle className="h-4 w-4 text-card-3 mr-2" />
+                          <span className="text-text-secondary">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -260,13 +260,13 @@ const Index = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-blue-accent">
+        <section className="py-20 bg-card-2">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="animate-on-scroll">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-heading mb-6">
                 Ready to Transform Your Credit?
               </h2>
-              <p className="text-xl text-navy-dark mb-8 max-w-2xl mx-auto">
+              <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
                 Join thousands of clients who have successfully restored their credit and built their financial future
                 with TruCredit.
               </p>
@@ -277,7 +277,7 @@ const Index = () => {
                 <Button
                   variant="outline"
                   size="xl"
-                  className="bg-white text-navy-primary border-white hover:bg-white/90"
+                  className="bg-white text-text-primary border-white hover:bg-white/90"
                   asChild
                 >
                   <Link to="/how-it-works">Learn How It Works</Link>

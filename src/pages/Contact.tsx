@@ -81,30 +81,30 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Header */}
-      <section className="py-20 bg-gradient-to-br from-navy-primary to-navy-primary/90">
+      <section className="py-20 bg-navbar">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-heading mb-6">
             Let's Get Started
           </h1>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Ready to transform your credit and build your financial future? Get in touch with our expert team today.
           </p>
         </div>
       </section>
 
       {/* Contact Methods */}
-      <section className="py-20 bg-gray-light">
+      <section className="py-20 bg-card-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {contactMethods.map((method) => (
               <Card key={method.title} className="text-center hover-lift bg-white shadow-lg border-0">
                 <CardContent className="p-6">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-gold-accent to-yellow-400 rounded-lg mb-4">
-                    <method.icon className="h-6 w-6 text-navy-primary" />
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-card-2 to-card-3 rounded-lg mb-4">
+                    <method.icon className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="font-bold text-navy-primary mb-2">{method.title}</h3>
-                  <p className="text-gold-accent font-semibold mb-1">{method.value}</p>
-                  <p className="text-gray-medium text-sm mb-3">{method.description}</p>
+                  <h3 className="font-bold text-heading mb-2">{method.title}</h3>
+                  <p className="text-card-1 font-semibold mb-1">{method.value}</p>
+                  <p className="text-gray-600 text-sm mb-3">{method.description}</p>
                   {method.action && method.action.startsWith('http') && (
                     <Button variant="outline" size="sm" asChild>
                       <a href={method.action} target="_blank" rel="noopener noreferrer">
@@ -131,11 +131,11 @@ const Contact = () => {
             {/* Contact Form */}
             <Card className="shadow-xl border-0">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-navy-primary flex items-center">
+                <CardTitle className="text-2xl font-bold text-heading flex items-center">
                   <MessageCircle className="mr-3 h-6 w-6" />
                   Send Us a Message
                 </CardTitle>
-                <p className="text-gray-medium">
+                <p className="text-text-secondary">
                   Fill out the form below and we'll get back to you within 24 hours.
                 </p>
               </CardHeader>
@@ -206,7 +206,7 @@ const Contact = () => {
               {/* Business Hours */}
               <Card className="shadow-lg border-0">
                 <CardHeader>
-                  <CardTitle className="text-xl font-bold text-navy-primary flex items-center">
+                  <CardTitle className="text-xl font-bold text-heading flex items-center">
                     <Clock className="mr-3 h-5 w-5" />
                     Business Hours
                   </CardTitle>
@@ -215,13 +215,13 @@ const Contact = () => {
                   <div className="space-y-3">
                     {businessHours.map((schedule) => (
                       <div key={schedule.day} className="flex justify-between items-center">
-                        <span className="font-medium text-gray-dark">{schedule.day}</span>
-                        <span className="text-gray-medium">{schedule.hours}</span>
+                        <span className="font-medium text-text-primary">{schedule.day}</span>
+                        <span className="text-gray-600">{schedule.hours}</span>
                       </div>
                     ))}
                   </div>
-                  <div className="mt-6 p-4 bg-gold-accent/10 rounded-lg">
-                    <p className="text-sm text-navy-primary font-medium">
+                  <div className="mt-6 p-4 bg-card-3/10 rounded-lg">
+                    <p className="text-sm text-text-primary font-medium">
                       Emergency consultations available by appointment
                     </p>
                   </div>
@@ -229,7 +229,7 @@ const Contact = () => {
               </Card>
 
               {/* Quick Actions */}
-              <Card className="bg-navy-primary text-white shadow-lg border-0">
+              <Card className="bg-navbar text-white shadow-lg border-0">
                 <CardHeader>
                   <CardTitle className="text-xl font-bold">
                     Need Immediate Help?
