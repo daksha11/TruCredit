@@ -80,40 +80,28 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Header */}
-      <section className="py-20 bg-navbar">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-heading mb-6">
-            Let's Get Started
-          </h1>
-          <p className="text-xl text-white max-w-3xl mx-auto">
-            Ready to transform your credit and build your financial future? Get in touch with our expert team today.
-          </p>
-        </div>
-      </section>
-
       {/* Contact Methods */}
-      <section className="py-20 bg-card-4">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {contactMethods.map((method) => (
-              <Card key={method.title} className="text-center hover-lift bg-white shadow-lg border-0">
+              <Card key={method.title} className="text-center hover-lift bg-navbar shadow-lg border-0">
                 <CardContent className="p-6">
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-card-2 to-card-3 rounded-lg mb-4">
                     <method.icon className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="font-bold text-heading mb-2">{method.title}</h3>
-                  <p className="text-card-1 font-semibold mb-1">{method.value}</p>
-                  <p className="text-gray-600 text-sm mb-3">{method.description}</p>
+                  <p className="text-secondary font-semibold mb-1">{method.value}</p>
+                  <p className="text-secondary text-sm mb-3">{method.description}</p>
                   {method.action && method.action.startsWith('http') && (
-                    <Button variant="outline" size="sm" asChild>
+                    <Button variant="outline" size="sm" className="bg-white border-white hover:bg-white/90" asChild>
                       <a href={method.action} target="_blank" rel="noopener noreferrer">
                         Visit
                       </a>
                     </Button>
                   )}
                   {method.action && method.action.startsWith('tel:') && (
-                    <Button variant="outline" size="sm" asChild>
+                    <Button variant="outline" size="sm" className="bg-white text-text-primary border-white hover:bg-white/90" asChild>
                       <a href={method.action}>Call Now</a>
                     </Button>
                   )}
@@ -129,20 +117,20 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <Card className="shadow-xl border-0">
+            <Card className="shadow-xl border-0 bg-navbar">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-heading flex items-center">
                   <MessageCircle className="mr-3 h-6 w-6" />
                   Send Us a Message
                 </CardTitle>
-                <p className="text-text-secondary">
+                <p className="text-secondary">
                   Fill out the form below and we'll get back to you within 24 hours.
                 </p>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6" id="contact-form">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
+                    <div className="space-y-2 text-secondary">
                       <Label htmlFor="name">Full Name *</Label>
                       <Input
                         id="name"
@@ -154,7 +142,7 @@ const Contact = () => {
                         required
                       />
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-2 text-secondary">
                       <Label htmlFor="phone">Phone Number</Label>
                       <Input
                         id="phone"
@@ -167,7 +155,7 @@ const Contact = () => {
                     </div>
                   </div>
 
-                  <div className="space-y-2">
+                  <div className="space-y-2 text-secondary">
                     <Label htmlFor="email">Email Address *</Label>
                     <Input
                       id="email"
@@ -180,7 +168,7 @@ const Contact = () => {
                     />
                   </div>
 
-                  <div className="space-y-2">
+                  <div className="space-y-2 text-secondary">
                     <Label htmlFor="message">Message *</Label>
                     <Textarea
                       id="message"
@@ -193,7 +181,7 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button type="submit" variant="default" size="lg" className="w-full">
+                  <Button type="submit" variant="accent" size="lg" className="w-full">
                     <Send className="mr-2 h-5 w-5" />
                     Send Message
                   </Button>
@@ -204,7 +192,7 @@ const Contact = () => {
             {/* Business Hours & Additional Info */}
             <div className="space-y-8">
               {/* Business Hours */}
-              <Card className="shadow-lg border-0">
+              <Card className="shadow-lg border-0 bg-navbar">
                 <CardHeader>
                   <CardTitle className="text-xl font-bold text-heading flex items-center">
                     <Clock className="mr-3 h-5 w-5" />
@@ -215,13 +203,13 @@ const Contact = () => {
                   <div className="space-y-3">
                     {businessHours.map((schedule) => (
                       <div key={schedule.day} className="flex justify-between items-center">
-                        <span className="font-medium text-text-primary">{schedule.day}</span>
-                        <span className="text-gray-600">{schedule.hours}</span>
+                        <span className="font-medium text-secondary">{schedule.day}</span>
+                        <span className="text-secondary">{schedule.hours}</span>
                       </div>
                     ))}
                   </div>
-                  <div className="mt-6 p-4 bg-card-3/10 rounded-lg">
-                    <p className="text-sm text-text-primary font-medium">
+                  <div className="mt-6 p-4 bg-heading rounded-lg">
+                    <p className="text-sm text-#333333 font-medium">
                       Emergency consultations available by appointment
                     </p>
                   </div>
@@ -229,26 +217,26 @@ const Contact = () => {
               </Card>
 
               {/* Quick Actions */}
-              <Card className="bg-navbar text-white shadow-lg border-0">
+              <Card className="bg-navbar text-heading shadow-lg border-0">
                 <CardHeader>
                   <CardTitle className="text-xl font-bold">
                     Need Immediate Help?
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-gray-200">
+                  <p className="text-secondary">
                     Get started right away with our most popular services
                   </p>
                   
                   <div className="space-y-3">
-                    <Button variant="hero" size="lg" className="w-full" asChild>
+                    <Button variant="accent" size="lg" className="w-full" asChild>
                       <a href="tel:470-223-8668">
                         <Phone className="mr-2 h-5 w-5" />
                         Call for Free Consultation
                       </a>
                     </Button>
                     
-                    <Button variant="outline" size="lg" className="w-full bg-white/10 border-white/30 text-white hover:bg-white/20">
+                    <Button variant="outline" size="lg" className="bg-white text-text-primary border-white hover:bg-white/90" asChild>
                       <a href="/services" className="flex items-center justify-center w-full">
                         View Services & Pricing
                       </a>

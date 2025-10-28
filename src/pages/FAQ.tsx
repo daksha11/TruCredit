@@ -91,10 +91,10 @@ const FAQ = () => {
       {/* Header */}
       <section className="py-20 bg-gradient-to-br from-navy-primary to-navy-primary/90">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-#333333 mb-6">
             Frequently Asked Questions
           </h1>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+          <p className="text-xl text-#333333 max-w-3xl mx-auto">
             Get answers to common questions about our credit restoration and business credit services
           </p>
         </div>
@@ -153,17 +153,17 @@ const FAQ = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-navy-primary">
+      <section className="py-20 bg-navbar">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
+          <h2 className="text-4xl font-bold text-heading mb-6">
             Still Have Questions?
           </h2>
-          <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-secondary mb-8 max-w-2xl mx-auto">
             Our credit experts are here to help. Get personalized answers during your free consultation.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" asChild>
+            <Button variant="accent" size="lg" asChild>
               <Link to="/contact">
                 <Phone className="mr-2 h-5 w-5" />
                 Schedule Free Consultation
@@ -173,7 +173,7 @@ const FAQ = () => {
             <Button
               variant="outline"
               size="lg"
-              className="bg-white/10 border-white/30 text-white hover:bg-white/20"
+              className="bg-white text-text-primary border-white hover:bg-white/90"
               asChild
             >
               <Link to="/services">View Our Services</Link>

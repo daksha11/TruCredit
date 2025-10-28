@@ -82,12 +82,12 @@ const Services = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Header Section */}
-      <section className="py-20 bg-navbar">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-heading mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-#213966 mb-6">
             Affordable, Transparent Services
           </h1>
-          <p className="text-xl text-white max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-#333333 max-w-3xl mx-auto mb-8">
             No hidden fees. Clear pricing. Results you can trust.
           </p>
           <div className="flex items-center justify-center space-x-2 text-gold-star">
@@ -96,13 +96,13 @@ const Services = () => {
             <Star className="h-5 w-5 fill-current" />
             <Star className="h-5 w-5 fill-current" />
             <Star className="h-5 w-5 fill-current" />
-            <span className="text-white ml-2">Trusted by 1000+ clients</span>
+            <span className="text-#333333 ml-2">Trusted by 1000+ clients</span>
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-card-4">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {services.map((service, index) => (
@@ -110,8 +110,8 @@ const Services = () => {
                 key={service.title}
                 className={`relative flex flex-col hover-lift transition-all duration-300 ${
                   service.highlight 
-                    ? 'ring-2 ring-card-1 shadow-xl scale-105 bg-card-3/20' 
-                    : 'shadow-lg bg-white'
+                    ? 'ring-2 ring-card-1 shadow-xl scale-105 bg-card-4'
+                    : 'shadow-lg bg-card-4'
                 } border-0`}
               >
                 {service.badge && (
@@ -121,7 +121,7 @@ const Services = () => {
                 )}
                 
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-2xl font-bold text-heading mb-2">
+                  <CardTitle className="text-2xl font-bold text-#386BC8 mb-2">
                     {service.title}
                   </CardTitle>
                   
@@ -183,12 +183,12 @@ const Services = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-20 bg-card-1">
+      <section className="py-20 bg-navbar">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-heading mb-6">
             Have Questions About Our Services?
           </h2>
-          <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-secondary mb-8 max-w-2xl mx-auto">
             Speak with our credit experts to find the perfect solution for your financial goals.
           </p>
           

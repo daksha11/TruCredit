@@ -187,7 +187,7 @@ const Index = () => {
                 We help you remove negative items, build business credit, and secure funding for the life you deserve.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button variant="hero" size="xl" asChild className="group">
+                <Button size="xl" asChild className="group bg-heading text-#333333 hover:bg-secondary">
                   <Link to="/contact">
                     Book Free Consultation
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -207,13 +207,13 @@ const Index = () => {
         </section>
 
         {/* Highlights Section */}
-        <section ref={featuresRef} className="py-20 bg-card-1">
+        <section ref={featuresRef} className="py-20 bg-white-pure">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 animate-on-scroll">
-              <h2 className="text-4xl md:text-5xl font-bold text-heading mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-#213966 mb-6">
                 Your Path to Financial Freedom
               </h2>
-              <p className="text-xl text-white max-w-3xl mx-auto">
+              <p className="text-xl text-black max-w-3xl mx-auto">
                 Transform your financial future with our comprehensive credit restoration and business building
                 services.
               </p>
@@ -223,7 +223,7 @@ const Index = () => {
               {highlights.map((highlight, index) => (
                 <Card
                   key={highlight.title}
-                  className={`hover-lift animate-on-scroll bg-white border-card-2/20 shadow-xl`}
+                  className={`hover-lift animate-on-scroll bg-card-3 border-card-2/20 shadow-xl`}
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <CardContent className="p-8 text-center">
@@ -231,7 +231,7 @@ const Index = () => {
                       <highlight.icon className="h-8 w-8 text-white" />
                     </div>
 
-                    <h3 className="text-2xl font-bold text-heading mb-4">{highlight.title}</h3>
+                    <h3 className="text-2xl font-bold text-#333333 mb-4">{highlight.title}</h3>
 
                     <p className="text-text-secondary mb-6 leading-relaxed">{highlight.description}</p>
 
@@ -260,18 +260,18 @@ const Index = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-card-2">
+        <section className="py-20 bg-navbar">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="animate-on-scroll">
               <h2 className="text-4xl md:text-5xl font-bold text-heading mb-6">
                 Ready to Transform Your Credit?
               </h2>
-              <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
+              <p className="text-xl text-secondary mb-8 max-w-2xl mx-auto">
                 Join thousands of clients who have successfully restored their credit and built their financial future
                 with TruCredit.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="premium" size="xl" asChild>
+                <Button variant="accent" size="xl" asChild>
                   <Link to="/contact">Start Your Journey Today</Link>
                 </Button>
                 <Button

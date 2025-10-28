@@ -153,36 +153,16 @@ const Testimonials = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Header Section */}
-      <section className="py-20 bg-navbar">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-heading mb-6">
-            Client Success Stories
-          </h1>
-          <p className="text-xl text-white max-w-3xl mx-auto mb-8">
-            Real results from real clients who transformed their financial lives with TruCredit
-          </p>
-          <div className="flex items-center justify-center space-x-2 text-gold-star">
-            <Star className="h-5 w-5 fill-current" />
-            <Star className="h-5 w-5 fill-current" />
-            <Star className="h-5 w-5 fill-current" />
-            <Star className="h-5 w-5 fill-current" />
-            <Star className="h-5 w-5 fill-current" />
-            <span className="text-white ml-2">4.9/5 from 200+ reviews</span>
-          </div>
-        </div>
-      </section>
-
       {/* Stats Section */}
-      <section className="py-16 bg-card-2">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-heading mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-#333333 mb-2">
                   {stat.number}
                 </div>
-                <div className="text-white font-medium">
+                <div className="text-#333333 font-medium">
                   {stat.label}
                 </div>
               </div>
@@ -192,13 +172,13 @@ const Testimonials = () => {
       </section>
 
       {/* Testimonials Carousel */}
-      <section className="py-20 bg-card-4">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-heading mb-4">
+            <h2 className="text-4xl font-bold text-#333333 mb-4">
               Real Stories, Real Results
             </h2>
-            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+            <p className="text-#333333 text-lg max-w-2xl mx-auto">
               Read how our clients achieved their financial goals and transformed their credit profiles
             </p>
           </div>
@@ -227,12 +207,12 @@ const Testimonials = () => {
               {visibleTestimonials.map((testimonial, index) => (
                 <Card 
                   key={`${testimonial.name}-${index}`}
-                  className="relative bg-white border-0 shadow-lg hover-lift transition-all duration-300"
+                  className="relative bg-heading border-0 shadow-lg hover-lift transition-all duration-300"
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-10">
                     {/* Quote Icon */}
                     <div className="absolute top-6 right-6 text-card-3/20">
-                      <Quote className="h-12 w-12" />
+                      <Quote className="h-12 w-12 text-white" />
                     </div>
 
                     {/* Rating */}
@@ -243,7 +223,7 @@ const Testimonials = () => {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-bold text-heading mb-4">
+                    <h3 className="text-xl font-bold text-#333333 mb-4">
                       {testimonial.title}
                     </h3>
 
@@ -306,12 +286,12 @@ const Testimonials = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-card-1">
+      <section className="py-20 bg-navbar">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-heading mb-6">
             Ready to Write Your Success Story?
           </h2>
-          <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-secondary mb-8 max-w-2xl mx-auto">
             Join thousands of clients who have transformed their financial lives with TruCredit
           </p>
           
@@ -328,7 +308,7 @@ const Testimonials = () => {
             </Button>
           </div>
 
-          <div className="mt-8 text-white">
+          <div className="mt-8 text-#333333">
             <p className="text-lg">
               <Phone className="inline h-5 w-5 mr-2" />
               Call us directly: <span className="font-semibold">470-223-8668</span>

@@ -64,7 +64,7 @@ const Navigation = () => {
               <Phone size={16} />
               <span>470-223-8668</span>
             </div>
-            <Button variant="hero" size="sm" asChild>
+            <Button size="sm" asChild className="bg-heading text-#333333 hover:bg-secondary">
               <Link to="/contact" onClick={handleNavigation}>
                 Book Free Consultation
               </Link>
