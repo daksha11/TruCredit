@@ -33,10 +33,28 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-navbar shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2" onClick={handleNavigation}>
-            <div className="bg-white text-navbar px-3 py-2 rounded-lg font-bold text-xl">
-              TruCredit
+          {/* Logo & Company Name */}
+          <Link to="/" className="flex items-center space-x-3" onClick={handleNavigation}>
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <picture>
+                <source srcSet="/logo.png" type="image/png" />
+                <img 
+                  src="/logo.png" 
+                  alt="TruCredit Logo" 
+                  className="h-12 w-12 object-contain"
+                />
+              </picture>
+            </div>
+            
+            {/* Company Name */}
+            <div className="flex flex-col">
+              <span className="text-white font-bold text-xl leading-tight">
+                TruCredit
+              </span>
+              <span className="text-secondary text-xs font-medium tracking-wide">
+                Credit Repair Experts
+              </span>
             </div>
           </Link>
 
@@ -104,7 +122,7 @@ const Navigation = () => {
                 <Phone size={16} />
                 <span>470-223-8668</span>
               </div>
-              <Button variant="hero" size="sm" className="w-full" asChild>
+              <Button size="sm" asChild className="bg-heading text-#333333 hover:bg-secondary">
                 <Link to="/contact" onClick={handleNavigation}>
                   Book Free Consultation
                 </Link>

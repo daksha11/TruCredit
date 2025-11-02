@@ -5,6 +5,214 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Building, DollarSign, ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
 
+// Embedded SplitText Component
+import React from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SplitText as GSAPSplitText } from 'gsap/SplitText';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger, GSAPSplitText, useGSAP);
+
+interface SplitTextProps {
+  text: string;
+  className?: string;
+  delay?: number;
+  duration?: number;
+  ease?: string | ((t: number) => number);
+  splitType?: 'chars' | 'words' | 'lines' | 'words, chars';
+  from?: gsap.TweenVars;
+  to?: gsap.TweenVars;
+  threshold?: number;
+  rootMargin?: string;
+  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
+  textAlign?: React.CSSProperties['textAlign'];
+  onLetterAnimationComplete?: () => void;
+}
+
+const SplitText: React.FC<SplitTextProps> = ({
+  text,
+  className = '',
+  delay = 100,
+  duration = 0.6,
+  ease = 'power3.out',
+  splitType = 'chars',
+  from = { opacity: 0, y: 40 },
+  to = { opacity: 1, y: 0 },
+  threshold = 0.1,
+  rootMargin = '-100px',
+  tag = 'p',
+  textAlign = 'center',
+  onLetterAnimationComplete
+}) => {
+  const ref = useRef<HTMLParagraphElement>(null);
+  const animationCompletedRef = useRef(false);
+  const [fontsLoaded, setFontsLoaded] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (document.fonts.status === 'loaded') {
+      setFontsLoaded(true);
+    } else {
+      document.fonts.ready.then(() => {
+        setFontsLoaded(true);
+      });
+    }
+  }, []);
+
+  useGSAP(
+    () => {
+      if (!ref.current || !text || !fontsLoaded) return;
+      const el = ref.current as HTMLElement & {
+        _rbsplitInstance?: GSAPSplitText;
+      };
+
+      if (el._rbsplitInstance) {
+        try {
+          el._rbsplitInstance.revert();
+        } catch (_) {}
+        el._rbsplitInstance = undefined;
+      }
+
+      const startPct = (1 - threshold) * 100;
+      const marginMatch = /^(-?\d+(?:\.\d+)?)(px|em|rem|%)?$/.exec(rootMargin);
+      const marginValue = marginMatch ? parseFloat(marginMatch[1]) : 0;
+      const marginUnit = marginMatch ? marginMatch[2] || 'px' : 'px';
+      const sign =
+        marginValue === 0
+          ? ''
+          : marginValue < 0
+            ? `-=${Math.abs(marginValue)}${marginUnit}`
+            : `+=${marginValue}${marginUnit}`;
+      const start = `top ${startPct}%${sign}`;
+      let targets: Element[] = [];
+      const assignTargets = (self: GSAPSplitText) => {
+        if (splitType.includes('chars') && (self as GSAPSplitText).chars?.length)
+          targets = (self as GSAPSplitText).chars;
+        if (!targets.length && splitType.includes('words') && self.words.length) targets = self.words;
+        if (!targets.length && splitType.includes('lines') && self.lines.length) targets = self.lines;
+        if (!targets.length) targets = self.chars || self.words || self.lines;
+      };
+      const splitInstance = new GSAPSplitText(el, {
+        type: splitType,
+        smartWrap: true,
+        autoSplit: splitType === 'lines',
+        linesClass: 'split-line',
+        wordsClass: 'split-word',
+        charsClass: 'split-char',
+        reduceWhiteSpace: false,
+        onSplit: (self: GSAPSplitText) => {
+          assignTargets(self);
+          return gsap.fromTo(
+            targets,
+            { ...from },
+            {
+              ...to,
+              duration,
+              ease,
+              stagger: delay / 1000,
+              scrollTrigger: {
+                trigger: el,
+                start,
+                once: true,
+                fastScrollEnd: true,
+                anticipatePin: 0.4
+              },
+              onComplete: () => {
+                animationCompletedRef.current = true;
+                onLetterAnimationComplete?.();
+              },
+              willChange: 'transform, opacity',
+              force3D: true
+            }
+          );
+        }
+      });
+      el._rbsplitInstance = splitInstance;
+      return () => {
+        ScrollTrigger.getAll().forEach(st => {
+          if (st.trigger === el) st.kill();
+        });
+        try {
+          splitInstance.revert();
+        } catch (_) {}
+        el._rbsplitInstance = undefined;
+      };
+    },
+    {
+      dependencies: [
+        text,
+        delay,
+        duration,
+        ease,
+        splitType,
+        JSON.stringify(from),
+        JSON.stringify(to),
+        threshold,
+        rootMargin,
+        fontsLoaded,
+        onLetterAnimationComplete
+      ],
+      scope: ref
+    }
+  );
+
+  const renderTag = () => {
+    const style: React.CSSProperties = {
+      textAlign,
+      wordWrap: 'break-word',
+      willChange: 'transform, opacity'
+    };
+    const classes = `split-parent overflow-hidden inline-block whitespace-normal ${className}`;
+    switch (tag) {
+      case 'h1':
+        return (
+          <h1 ref={ref} style={style} className={classes}>
+            {text}
+          </h1>
+        );
+      case 'h2':
+        return (
+          <h2 ref={ref} style={style} className={classes}>
+            {text}
+          </h2>
+        );
+      case 'h3':
+        return (
+          <h3 ref={ref} style={style} className={classes}>
+            {text}
+          </h3>
+        );
+      case 'h4':
+        return (
+          <h4 ref={ref} style={style} className={classes}>
+            {text}
+          </h4>
+        );
+      case 'h5':
+        return (
+          <h5 ref={ref} style={style} className={classes}>
+            {text}
+          </h5>
+        );
+      case 'h6':
+        return (
+          <h6 ref={ref} style={style} className={classes}>
+            {text}
+          </h6>
+        );
+      default:
+        return (
+          <p ref={ref} style={style} className={classes}>
+            {text}
+          </p>
+        );
+    }
+  };
+
+  return renderTag();
+};
+
+// Main Index Component
 const Index = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const featuresRef = useRef<HTMLDivElement>(null);
@@ -44,6 +252,10 @@ const Index = () => {
     localStorage.setItem('trucredit_terms_agreed', 'true');
     localStorage.setItem('trucredit_terms_agreed_date', new Date().toISOString());
     setShowPopup(false);
+  };
+
+  const handleHeroAnimationComplete = () => {
+    console.log('Hero heading animation completed!');
   };
 
   const highlights = [
@@ -176,17 +388,44 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-navbar/90 via-navbar/70 to-transparent"></div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="animate-fade-up">
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-                Restore Your Credit.
-                <span className="block text-heading">
-                  Build Your Future.
-                </span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <div>
+              <div className="mb-6">
+                <SplitText
+                  text="Restore Your Credit."
+                  className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight block"
+                  delay={50}
+                  duration={0.8}
+                  ease="power3.out"
+                  splitType="chars"
+                  from={{ opacity: 0, y: 60, rotationX: 90 }}
+                  to={{ opacity: 1, y: 0, rotationX: 0 }}
+                  threshold={0.1}
+                  rootMargin="-100px"
+                  tag="h1"
+                  textAlign="center"
+                  onLetterAnimationComplete={handleHeroAnimationComplete}
+                />
+                <SplitText
+                  text="Build Your Future."
+                  className="text-5xl md:text-7xl font-bold text-heading leading-tight block"
+                  delay={30}
+                  duration={0.8}
+                  ease="power3.out"
+                  splitType="chars"
+                  from={{ opacity: 0, y: 60, rotationX: 90 }}
+                  to={{ opacity: 1, y: 0, rotationX: 0 }}
+                  threshold={0.1}
+                  rootMargin="-100px"
+                  tag="h1"
+                  textAlign="center"
+                />
+              </div>
+              
+              <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-up">
                 We help you remove negative items, build business credit, and secure funding for the life you deserve.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up">
                 <Button size="xl" asChild className="group bg-heading text-#333333 hover:bg-secondary">
                   <Link to="/contact">
                     Book Free Consultation

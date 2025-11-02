@@ -25,12 +25,34 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Company Info + Contact */}
           <div className="space-y-4">
-            <div className="bg-white text-footer px-3 py-2 rounded-lg font-bold text-xl inline-block">
-              TruCredit
+            <div className="flex items-center space-x-3">
+              {/* Logo */}
+              <div className="flex-shrink-0">
+                <picture>
+                  <source srcSet="/logo.png" type="image/png" />
+                  <img 
+                    src="/logo.png" 
+                    alt="TruCredit Logo" 
+                    className="h-12 w-12 object-contain"
+                  />
+                </picture>
+              </div>
+              
+              {/* Company Name */}
+              <div className="flex flex-col">
+                <span className="text-white font-bold text-xl leading-tight">
+                  TruCredit
+                </span>
+                <span className="text-secondary text-xs font-medium tracking-wide">
+                  Credit Repair Experts
+                </span>
+              </div>
             </div>
-            <p className="text-gray-300 text-sm leading-relaxed">
+            
+            <p className="text-gray-300 text-sm leading-relaxed pt-2">
               Your partner in credit success. We empower individuals and small businesses to achieve financial freedom through credit restoration and business credit building.
             </p>
+            
             <div className="flex items-center space-x-2 text-sm">
               <Instagram size={16} className="text-card-3" />
               <a

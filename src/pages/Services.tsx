@@ -47,6 +47,18 @@ const Services = () => {
       ]
     },
     {
+      title: "Inquiry Removal",
+      price: "$300",
+      duration: "30 days or less",
+      description: "Specialized service focused on removing all inaccurate inquiries from your credit report.",
+      features: [
+        "Remove all inaccurate inquiries",
+        "30-day completion guarantee",
+        "Expert dispute handling",
+        "Credit score improvement focus"
+      ]
+    },
+    {
       title: "Credit Sweep",
       price: "$999",
       originalPrice: "$1199 with bankruptcy",
