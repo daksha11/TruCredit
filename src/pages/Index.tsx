@@ -425,21 +425,49 @@ const Index = () => {
                 We help you remove negative items, build business credit, and secure funding for the life you deserve.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up">
-                <Button size="xl" asChild className="group bg-heading text-#333333 hover:bg-secondary">
-                  <Link to="/contact">
-                    Book Free Consultation
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="xl"
-                  className="bg-white/10 border-white/30 text-white hover:bg-white/20"
-                  asChild
-                >
-                  <Link to="/services">View Services</Link>
-                </Button>
+              {/* Parent container for all buttons, now handles animation */}
+              <div className="flex flex-col gap-4 justify-center items-center animate-fade-up">
+                
+                {/* New wrapper to control button widths */}
+                <div className="flex flex-col gap-4 w-full sm:w-fit">
+
+                  {/* Existing row of two buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <Button size="xl" asChild className="group bg-heading text-#333333 hover:bg-secondary w-full sm:w-auto">
+                      <Link to="/contact">
+                        Book Free Consultation
+                        <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="xl"
+                      className="bg-white/10 border-white/30 text-white hover:bg-white/20 w-full sm:w-auto"
+                      asChild
+                    >
+                      <Link to="/services">View Services</Link>
+                    </Button>
+                  </div>
+
+                  {/* New "Get started now" button */}
+                  <Button
+                    size="xl"
+                    asChild
+                    className="group bg-heading text-#333333 hover:bg-secondary w-full" // w-full to match wrapper
+                  >
+                    <a
+                      href="https://docs.google.com/forms/d/1CtQMcJPvYzzjmLAF5kF2usywsmfMj2AM1NHR2F0Cuno/edit?pli=1&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center" // Center text and icon
+                    >
+                      Get started now
+                      <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </a>
+                  </Button>
+
+                </div>
+
               </div>
             </div>
           </div>
@@ -531,3 +559,4 @@ const Index = () => {
 };
 
 export default Index;
+

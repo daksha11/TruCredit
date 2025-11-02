@@ -1,45 +1,11 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { toast } from "sonner";
-import { Phone, Mail, Instagram, MapPin, Clock, MessageCircle, Send } from "lucide-react";
+// Removed Input, Textarea, Label, toast as form is removed
+import { Phone, Mail, Instagram, MapPin, Clock, ArrowRight } from "lucide-react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: ""
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!formData.name || !formData.email || !formData.message) {
-      toast.error("Please fill in all required fields");
-      return;
-    }
-    
-    toast.success("Thank you for your message! We'll get back to you within 24 hours.");
-    
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: ""
-    });
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+  // Removed formData, handleSubmit, and handleInputChange states/functions
 
   const contactMethods = [
     {
@@ -59,9 +25,9 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "Available via contact form",
+      value: "info@thetrucredit.com", // Updated from "Available via contact form"
       description: "Send us a detailed message",
-      action: "#contact-form"
+      action: "mailto:info@thetrucredit.com"
     },
     {
       icon: MapPin,
@@ -80,10 +46,70 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Contact Methods */}
-      <section className="py-20">
+      {/* Page Title */}
+      <div className="text-center pt-20 bg-white-pure">
+          <h1 className="text-4xl md:text-8xl font-bold text-#213966 mb-4">
+              Get in Touch
+          </h1>
+      </div>
+
+      {/* Info & Actions Section (Moved Up) */}
+      <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {/* Switched to single column, centered */}
+          <div className="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
+            
+            {/* Quick Actions Card (Modified) (Moved First) */}
+            <Card className="bg-white-pure text-navy-primary shadow-lg border-0">
+              <CardHeader>
+                <CardTitle className="text-xl font-bold">
+                  Ready to Start?
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-text-secondary">
+                  Get started right away or give us a call for a free consultation.
+                </p>
+                
+                <div className="space-y-3">
+                  {/* "Get Started Now" Button */}
+                  <Button
+                    size="lg"
+                    asChild
+                    className="group bg-heading text-#333333 hover:bg-secondary w-full"
+                  >
+                    <a
+                      href="https://docs.google.com/forms/d/1CtQMcJPvYzzjmLAF5kF2usywsmfMj2AM1NHR2F0Cuno/edit?pli=1&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true&edit_requested=true"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center" // Center text and icon
+                    >
+                      Get started now
+                      <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </a>
+                  </Button>
+
+                  {/* "Call" Button */}
+                  <Button variant="accent" size="lg" className="w-full" asChild>
+                    <a href="tel:470-223-8668">
+                      <Phone className="mr-2 h-5 w-5" />
+                      Call for Free Consultation
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Business Hours card removed from this section */}
+            
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Methods (Moved Down) */}
+      <section className="py-20 bg-white-pure">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactMethods.map((method) => (
               <Card key={method.title} className="text-center hover-lift bg-navbar shadow-lg border-0">
                 <CardContent className="p-6">
@@ -100,9 +126,14 @@ const Contact = () => {
                       </a>
                     </Button>
                   )}
-                  {method.action && method.action.startsWith('tel:') && (
+                   {method.action && method.action.startsWith('tel:') && (
                     <Button variant="outline" size="sm" className="bg-white text-text-primary border-white hover:bg-white/90" asChild>
                       <a href={method.action}>Call Now</a>
+                    </Button>
+                  )}
+                  {method.action && method.action.startsWith('mailto:') && (
+                    <Button variant="outline" size="sm" className="bg-white text-text-primary border-white hover:bg-white/90" asChild>
+                      <a href={method.action}>Email Us</a>
                     </Button>
                   )}
                 </CardContent>
@@ -112,178 +143,44 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form & Info */}
-      <section className="py-20 bg-white">
+      {/* Business Hours Section (Moved to bottom) */}
+      <section className="py-20 bg-navbar">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <Card className="shadow-xl border-0 bg-navbar">
+          <div className="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
+            {/* Business Hours (Elongated) */}
+            <Card className="shadow-lg border-0 bg-white">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-heading flex items-center">
-                  <MessageCircle className="mr-3 h-6 w-6" />
-                  Send Us a Message
+                <CardTitle className="text-xl font-bold text-navy-primary flex items-center">
+                  <Clock className="mr-3 h-5 w-5" />
+                  Business Hours
                 </CardTitle>
-                <p className="text-secondary">
-                  Fill out the form below and we'll get back to you within 24 hours.
-                </p>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6" id="contact-form">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2 text-secondary">
-                      <Label htmlFor="name">Full Name *</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Enter your full name"
-                        required
-                      />
+                <div className="space-y-3">
+                  {businessHours.map((schedule) => (
+                    <div key={schedule.day} className="flex justify-between items-center">
+                      <span className="font-medium text-text-primary">{schedule.day}</span>
+                      <span className="text-text-secondary">{schedule.hours}</span>
                     </div>
-                    <div className="space-y-2 text-secondary">
-                      <Label htmlFor="phone">Phone Number</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        placeholder="(555) 123-4567"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2 text-secondary">
-                    <Label htmlFor="email">Email Address *</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="Enter your email address"
-                      required
-                    />
-                  </div>
-
-                  <div className="space-y-2 text-secondary">
-                    <Label htmlFor="message">Message *</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Tell us about your credit goals and how we can help..."
-                      className="min-h-[120px]"
-                      required
-                    />
-                  </div>
-
-                  <Button type="submit" variant="accent" size="lg" className="w-full">
-                    <Send className="mr-2 h-5 w-5" />
-                    Send Message
-                  </Button>
-                </form>
+                  ))}
+                </div>
+                <div className="mt-6 p-4 bg-heading/20 rounded-lg space-y-2">
+                  <p className="text-sm text-navy-primary font-medium">
+                    Emergency consultations available by appointment.
+                  </p>
+                  <p className="text-sm text-navy-primary/80">
+                    We strive to return all messages within one business day.
+                  </p>
+                </div>
               </CardContent>
             </Card>
-
-            {/* Business Hours & Additional Info */}
-            <div className="space-y-8">
-              {/* Business Hours */}
-              <Card className="shadow-lg border-0 bg-navbar">
-                <CardHeader>
-                  <CardTitle className="text-xl font-bold text-heading flex items-center">
-                    <Clock className="mr-3 h-5 w-5" />
-                    Business Hours
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {businessHours.map((schedule) => (
-                      <div key={schedule.day} className="flex justify-between items-center">
-                        <span className="font-medium text-secondary">{schedule.day}</span>
-                        <span className="text-secondary">{schedule.hours}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-6 p-4 bg-heading rounded-lg">
-                    <p className="text-sm text-#333333 font-medium">
-                      Emergency consultations available by appointment
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Quick Actions */}
-              <Card className="bg-navbar text-heading shadow-lg border-0">
-                <CardHeader>
-                  <CardTitle className="text-xl font-bold">
-                    Need Immediate Help?
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-secondary">
-                    Get started right away with our most popular services
-                  </p>
-                  
-                  <div className="space-y-3">
-                    <Button variant="accent" size="lg" className="w-full" asChild>
-                      <a href="tel:470-223-8668">
-                        <Phone className="mr-2 h-5 w-5" />
-                        Call for Free Consultation
-                      </a>
-                    </Button>
-                    
-                    <Button variant="outline" size="lg" className="bg-white text-text-primary border-white hover:bg-white/90" asChild>
-                      <a href="/services" className="flex items-center justify-center w-full">
-                        View Services & Pricing
-                      </a>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Payment Options (Commented Out) */}
-              {/*
-              <Card className="shadow-lg border-0">
-                <CardHeader>
-                  <CardTitle className="text-xl font-bold text-navy-primary">
-                    Payment Options
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span className="font-medium">Zelle:</span>
-                      <span className="text-gold-accent">470-223-8668</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="font-medium">Cash App:</span>
-                      <span className="text-gold-accent">$HouseofDiorr</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="font-medium">Apple Pay:</span>
-                      <span className="text-gray-medium">Available on request</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="font-medium">Online:</span>
-                      <span className="text-gray-medium">Stripe & PayPal</span>
-                    </div>
-                  </div>
-                  <Button variant="gold" size="sm" className="w-full mt-4" asChild>
-                    <a href="/payment">Make Payment</a>
-                  </Button>
-                </CardContent>
-              </Card>
-              */}
-            </div>
           </div>
         </div>
       </section>
+
     </div>
   );
 };
 
 export default Contact;
+
