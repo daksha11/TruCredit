@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Building, DollarSign, ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-bg.jpg";
+import Aurora from "@/components/Aurora";
 
 // Embedded SplitText Component
 import React from 'react';
@@ -69,7 +69,7 @@ const SplitText: React.FC<SplitTextProps> = ({
       if (el._rbsplitInstance) {
         try {
           el._rbsplitInstance.revert();
-        } catch (_) {}
+        } catch (_) { }
         el._rbsplitInstance = undefined;
       }
 
@@ -134,7 +134,7 @@ const SplitText: React.FC<SplitTextProps> = ({
         });
         try {
           splitInstance.revert();
-        } catch (_) {}
+        } catch (_) { }
         el._rbsplitInstance = undefined;
       };
     },
@@ -378,14 +378,18 @@ const Index = () => {
         {/* Hero Section */}
         <section
           ref={heroRef}
-          className="relative min-h-screen flex items-center justify-center overflow-hidden"
-          style={{
-            backgroundImage: `linear-gradient(rgba(33, 57, 102, 0.9), rgba(33, 57, 102, 0.8)), url(${heroImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a1628]"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-navbar/90 via-navbar/70 to-transparent"></div>
+          {/* Aurora Background */}
+          <Aurora
+            colorStops={['#1e3a8a', '#3b82f6', '#60a5fa']}
+            amplitude={1.2}
+            blend={0.6}
+            speed={0.8}
+          />
+
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div>
@@ -420,14 +424,14 @@ const Index = () => {
                   textAlign="center"
                 />
               </div>
-              
+
               <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-up">
                 We help you remove negative items, build business credit, and secure funding for the life you deserve.
               </p>
-              
+
               {/* Parent container for all buttons, now handles animation */}
               <div className="flex flex-col gap-4 justify-center items-center animate-fade-up">
-                
+
                 {/* New wrapper to control button widths */}
                 <div className="flex flex-col gap-4 w-full sm:w-fit">
 
